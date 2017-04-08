@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BOOK STORE</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	 <script src="jsfinal.js"></script>
+	 <link rel="stylesheet" href="cssfinal.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	</script>
+	
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">    
+        <div class="col-lg-3 col-lg-offset-1">
+		    <div class="input-group">
+
+				<span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+		    	<input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    	<span>Categories</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#contains">Contains</a></li>
+                      <li><a href="#its_equal">It's equal</a></li>
+                      <li><a href="#greather_than">Greather than ></a></li>
+                      <li><a href="#less_than">Less than < </a></li>
+                      <li class="divider"></li>
+                      <li><a href="#all">Anything</a></li>
+                    </ul>
+                </div>
+               
+            </div>
+        </div>
+		<div class="col-lg-4 logoimages">
+			<img id="logo" src="images/logomac.png">
+		</div>
+		<div class="col-lg-3 about">
+			<a href="#">About</a>
+			<a href="#">| About</a>
+			<a href="#">| About</a>
+			<a href="#">| About</a>
+		</div>
+	</div>
+	<nav class="navbar navbar-default">
+
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					</div>
+
+					<div class="collapse navbar-collapse navbar-center" id="myNavbar">
+						<ul class="nav navbar-nav">
+							<li class="head"><a href="#"><h5>HOME<span class="caret"></span></h5></a></li>
+							<li class="head"><a href="#"><h5>BOOKS</h5></a></li>
+							<li class="head"><a href="#"><h5>FICTION</h5></a></li>
+							<li class="head"><a href="#"><h5>BIOGRAPHY</h5></a></li>
+							<li class="head"><a href="#"><h5>CHILDREN'S BOOKS</h5></a></li>
+							<li class="head"><a href="#"><h5>ROMANCE</h5></a></li>
+							<li class="head"><a href="#"><h5>HISTORY</h5></a></li>
+							<li class="head"><a href="#"><h5>FICTION</h5></a></li>
+						</ul>
+					</div>
+
+		</div>
+	</div>
+
+</nav>
+</div>
+
+<div class="container-fluid">
+		<div class="row">
+			<div id="carousel-id" class="carousel slide carousel-fade" data-ride="carousel" data-interval="30000">
+
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-id" data-slide-to="1"></li>
+							<li data-target="#carousel-id" data-slide-to="2"></li>
+						</ol>
+
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="images/madrid1.jpg"/>
+								<div class="container">
+
+									<div class="carousel-caption theme">
+										<h1 class="titleheader">Explore the world through books</h1>
+										<p class="subheader">------------------------- <br/>“The books that the world calls immoral are books that show the world its own shame.” </p>
+										<button type="button" class="btn btn-warning btn-md" style="margin-bottom: 15px">SHOP NOW</button><br/><br/><br/>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="item">
+								<img src="images/museum.jpg"/>
+								<div class="container">
+
+									<div class="carousel-caption theme">
+										<h1 class="titleheader">Architecture and Art</h1>
+										<p class="subheader">------------------------- <br/>“Books are a uniquely portable magic.” </p>
+										<button type="button" class="btn btn-primary btn-md" style="margin-bottom: 15px">SHOP NOW</button><br/><br/><br/><br/><br/><br/><br/>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="item">
+								<img src="images/newyork.jpg"/>
+								<div class="container">
+
+									<div class="carousel-caption theme">
+										<h1 class="titleheader">Everthing is all about <p class="keytittle">BOOKS<p></h1>
+										<p class="subheader">------------------------- <br/>The greatest thing human made.</p>
+										<button type="button" class="btn btn-warning btn-md"  style="margin-bottom: 15px">SHOP NOW</button>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+						<a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+						<a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+			</div>
+		</div>
+</div>
+<div class="parttwo">
+		<div class="highlight">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4 higlight">
+					<h5 id="highlight">TODAY <br/>HIGHLIGHT</h5>
+					<hr class="hrhighlight"/>
+				</div>
+				<div class="col-lg-2">
+					<img src="images/travelbook.jpg" class="bookhighlight">
+				</div>
+				<div class="col-lg-6">
+					<h1 class="booktitle">Around The World In 21</h1>
+					<h2 class="subbooktitle">Limited Edition</h2>
+					<h5 class="bookauthor">by James Wong</h5>
+					<h4 class="bookprice">$14.36</h4>
+
+				</div>
+			</div>
+			<hr style="border-color: #E7E3D8; width: 90%; margin-top: 80px; border-top-width: 3px;" />
+			<div class="col-lg-4 higlight">
+					<h5 id="featuredbooks">FEATURED BOOKS</h5>
+					<hr class="hrfeaturedbooks"/>
+			</div>
+		</div>
+		</div>
+</div>
+<div class="parttwo1">
+	
+			<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12" style="padding: 0px;">
+					<div id="middleCarousel" class="carousel slide" data-interval="4000" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#middleCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#middleCarousel" data-slide-to="1"></li>
+							<li data-target="#middleCarousel" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="row">
+									<div class="col-lg-2 col-lg-offset-1" style="text-align: center;">
+										<a href="#"><img class="otherbooks" src="images/travelbook.jpg"/></a>
+										<a href="#"><h5 class="otherbooktitle">Around The World In 21</h5></a>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+									<div class="col-lg-2" style="text-align: center;">
+										<img class="otherbooks" src="images/travelbook.jpg"/>
+										<h5 class="otherbooktitle">Around The World In 21</h5>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+									<div class="col-lg-2" style="text-align: center;">
+										<img class="otherbooks" src="images/travelbook.jpg"/>
+										<h5 class="otherbooktitle">Around The World In 21</h5>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+									<div class="col-lg-2" style="text-align: center;">
+										<img class="otherbooks" src="images/travelbook.jpg"/>
+										<h5 class="otherbooktitle">Around The World In 21</h5>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+									<div class="col-lg-2" style="text-align: center;">
+										<img class="otherbooks" src="images/travelbook.jpg"/>
+										<h5 class="otherbooktitle">Around The World In 21</h5>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="item">
+								<div class="row">
+									<div class="col-lg-2 col-lg-offset-1" style="text-align: center;">
+										<img class="otherbooks" src="images/travelbook.jpg"/>
+										<h5 class="otherbooktitle">Around The World In 21</h5>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+									<div class="col-lg-2" style="text-align: center;">
+										<img class="otherbooks" src="images/travelbook.jpg"/>
+										<h5 class="otherbooktitle">Around The World In 21</h5>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+									<div class="col-lg-2" style="text-align: center;">
+										<img class="otherbooks" src="images/travelbook.jpg"/>
+										<h5 class="otherbooktitle">Around The World In 21</h5>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+									<div class="col-lg-2" style="text-align: center;">
+										<img class="otherbooks" src="images/travelbook.jpg"/>
+										<h5 class="otherbooktitle">Around The World In 21</h5>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+									<div class="col-lg-2" style="text-align: center;">
+										<img class="otherbooks" src="images/travelbook.jpg"/>
+										<h5 class="otherbooktitle">Around The World In 21</h5>
+										<h6 class="otherbookauthor">by James Wong</h6>
+										<h5 class="otherbookprice">$14.36</h5>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+						<a class="down left carousel-control" href="#middleCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" style="color: #ECE8DD;"></span></a>
+						<a class="down right carousel-control" href="#middleCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right" style="color: #ECE8DD;"></span></a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	
+</div>		
+
+
+</body>
+</html>

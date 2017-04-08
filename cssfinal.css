@@ -1,0 +1,149 @@
+.input-group {
+	margin-top: 50px;	
+}
+#logo {
+	width: 100px;
+	height: 100px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.logoimages {
+	text-align: center;
+}
+.about {
+	margin-top: 50px;
+}
+.navbar-default {
+	border: 0px;
+	margin-bottom: 0px;
+	position: relative;
+}
+.head {
+	text-align: center;
+	margin-right: 35px;
+	margin-left: 5px;
+	
+}
+h5 {
+	font-weight: bold;
+}
+.titleheader {
+	font-family: 'iCiel Brush Up';
+	font-size: 8em;
+}
+.subheader {
+	color: #fff;
+   	font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.5em;
+   	font-weight: bolder;
+}
+.keytittle {
+	font-family: 'iCiel Brush Up';
+	font-size: 2em;
+}
+.theme {
+	margin-bottom: 120px;	
+}
+.parttwo {
+	background-color: #ECE8DD;
+	height: 700px;
+	padding-right: 0px;
+}
+.parttwo1 {
+	height: 280px;
+}
+.highlight {
+	color: black;
+   	font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.5em;
+   	font-weight: bolder;
+}
+#highlight {
+	margin: 100px auto 0px 280px;
+	color: #676358;
+}
+#featuredbooks {
+	margin: 10px auto 0px 210px;
+	color: #676358;
+}
+.hrhighlight {
+	width: 80px;
+	margin-top: 10px;
+	margin-left: 280px;
+	border-color: #676358;
+}
+.hrfeaturedbooks {
+	width: 120px;
+	margin-top: 5px;
+	margin-left: 210px;
+	border-color: #676358;
+}
+.bookhighlight {
+	height: 380px;
+	width: 250px;
+	margin-top: 50px;
+	box-shadow: 10px 10px 5px #888888;
+}
+.booktitle {
+	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	margin-top: 100px;
+
+}
+.otherbooktitle {
+	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-weight: bolder;
+	margin-top: 25px;
+}
+.subbooktitle {
+	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+.bookauthor {
+	color: #97928C;
+	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
+	margin-bottom: 20px;
+}
+.otherbookauthor {
+	color: #97928C;
+	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
+	margin-bottom: 20px;
+}
+.bookprice {
+	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #EC791C;
+}
+.otherbookprice {
+	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #EC791C;
+}
+.img-responsive {
+	height: 200px;
+	width: 133px;
+	box-shadow: 10px 10px 5px #888888;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.otherbooks {
+	width: 133px;
+	height: 200px;
+	box-shadow: 10px 10px 5px #888888;
+}	
+#middleCarousel {
+	background-color: none;
+	margin-top: -110px;
+}
+.carousel-control.right.down {
+	background-image: linear-gradient(to right,rgba(255, 255, 255, 0.5) 0,rgba(255, 255, 255, 0.0001) 100%);
+}
+.carousel-control.down {
+		opacity: 0.2
+}
+.carousel-control.left.down {
+	background-image: linear-gradient(to right,rgba(255, 255, 255, 0.5) 0,rgba(255, 255, 255, 0.0001) 100%);
+}
