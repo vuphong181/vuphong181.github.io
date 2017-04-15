@@ -52,6 +52,13 @@ h5 {
 .parttwo1 {
 	height: 280px;
 }
+.parttwodetail1 {
+	background-color: #ECE8DD;
+	padding-right: 0px;
+}
+.parttwodetail {
+
+}
 .highlight {
 	color: black;
    	font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -66,6 +73,11 @@ h5 {
 	margin: 10px auto 0px 210px;
 	color: #676358;
 }
+#featuredbooks1 {
+	color: #676358;
+	margin-left: 70px;
+	margin-top: 20px;
+}
 .hrhighlight {
 	width: 80px;
 	margin-top: 10px;
@@ -78,6 +90,12 @@ h5 {
 	margin-left: 210px;
 	border-color: #676358;
 }
+.hrfeaturedbooks1 {
+	width: 120px;
+	margin-top: -5px;
+	margin-left: 70px;
+	border-color: #676358;
+}
 .bookhighlight {
 	height: 380px;
 	width: 250px;
@@ -88,7 +106,11 @@ h5 {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-weight: bold;
 	margin-top: 100px;
-
+}
+.booktitle1 {
+	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	margin-top: 50px;
 }
 .otherbooktitle {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -116,6 +138,13 @@ h5 {
 	font-weight: bold;
 	color: #EC791C;
 }
+.bookprice1 {
+	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 2em;
+	font-weight: bold;
+	color: #EC791C;
+	margin-top:0px;
+}
 .otherbookprice {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-size: 1.5em;
@@ -138,6 +167,9 @@ h5 {
 	background-color: none;
 	margin-top: -110px;
 }
+#middleCarousel {
+	background-color: none;
+}
 .carousel-control.right.down {
 	background-image: linear-gradient(to right,rgba(255, 255, 255, 0.5) 0,rgba(255, 255, 255, 0.0001) 100%);
 }
@@ -146,4 +178,45 @@ h5 {
 }
 .carousel-control.left.down {
 	background-image: linear-gradient(to right,rgba(255, 255, 255, 0.5) 0,rgba(255, 255, 255, 0.0001) 100%);
+}
+.thumbnail {
+	background-color: inherit;
+	border: 0px;
+	margin-bottom: 10px;
+}
+#sachdaidien {
+	box-shadow: none;
+}
+
+.bestsellers {
+	color: #676358;
+}
+.hrbestsellers {
+	width: 120px;
+	margin-left: 0px;
+	margin-top: -5px;
+	border-color: #676358;
+}
+a:hover {
+	text-decoration: none;
+}
+.star {
+	color: #AEB406;
+}
+.badge-notify {
+	background: red;
+	position: relative;
+	top: -20px;
+	right: 10px;
+}
+
+.my-cart-icon {
+	position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
 }
