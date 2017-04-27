@@ -2,83 +2,137 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>detail</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Detail</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-	 <script src="jsfinal.js"></script>
-	 <link rel="stylesheet" href="cssfinal.css">
+	<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	
+	<!-- File -->
+	 	<link rel="stylesheet" href="cssfinal.css">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+	<!--Angular JS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-	</script>
-	<!-- Yellow Star -->
-	<link href="https://netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
-	<script src="lib/jquery.raty-fa.js"></script>
-	<script src="demo/javascripts/demo.js"></script>
-	<!-- Add to cart -->
-
+	<!--UI Boostrap-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+	<!-- Others -->
+		<link href="https://netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
 
-	<div class="parttwodetail1">
-		<nav class="navbar navbar-default">
-
-			<div class="row"  style="margin-right: 0px;">
-
-			
-				<div class="col-sm-10 col-sm-offset-1">
+<!-- Phan header Detail -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-10 col-sm-offset-1">
 			
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
+						<button type="button" class="navbar-toggle  navbar-toggler-right" data-toggle="collapse" data-target="#bookMenu">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<a class="navbar-brand" href="index.html"><img src="images/logomac1.png" style="width: 50px; height: 50px; margin-top: -10px;" alt=""><div style="width: 80px; height: 50px;"></div></a>
+						<a class="navbar-brand" href="#">
+								<!-- My Cart -->
+								<h2 style="margin-top: 0px;">
+									<div class="carttop">	
+										<span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="position: relative; background-color: inherit; z-index: 999;">
+											<span class="badge badge-notify my-cart-badge">0</span>
+										</span>			
+									</div>
+								</h2>	
+						</a>
+
 					</div>
 
-					<div class="collapse navbar-collapse navbar-center" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right carttop2">
+						<li>
+							<!-- My Cart -->
+								<h2 style="margin-top: 15px;">
+									<div class="carttop2">	
+										<span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="position: relative; background-color: inherit; z-index: 999;">
+											<span class="badge badge-notify my-cart-badge">0</span>
+										</span>			
+									</div>
+								</h2>
+						</li>
+					</ul>
+
+					<div class="collapse navbar-collapse navbar-center" id="bookMenu">
 						<ul class="nav navbar-nav">
-							<li class="head"><a href="index.html"><h5>HOME</h5></a></li>
-							<li class="head"><a href="category.html"><h5>BOOKS</h5></a></li>
-							<li class="head"><a href="category.html"><h5>FICTION</h5></a></li>
-							<li class="head"><a href="category.html"><h5>BIOGRAPHY</h5></a></li>
-							<li class="head"><a href="category.html"><h5>CHILDREN'S BOOKS</h5></a></li>
-							<li class="head"><a href="category.html"><h5>ROMANCE</h5></a></li>
-							<li class="head"><a href="category.html"><h5>HISTORY</h5></a></li>
-							<li class="head"><a href="category.html"><h5>FICTION</h5></a></li>
+							<li class="head"><a href="#"><h5>HOME</h5></a></li>
+							<li class="head">
+								<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+									<h5>
+                            			BOOKS <span class="caret"></span>
+                            		</h5>
+                            	</a>
+                       				<ul class="dropdown-menu" role="menu">
+                            			<li><a href="category.html">Business</a></li>
+                            			<li><a href="category.html">Children</a></li>
+                            			<li><a href="category.html">Romance</a></li>
+                            			<li><a href="category.html">Horror</a></li>
+                            			<li class="divider"></li>
+                            			<li><a href="category.html">Others</a>
+                        			</ul>
+
+
+
+							<li class="head"><a href="#"><h5>ADMIN</h5></a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+                        		<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        			<h5 style="margin-bottom: 0px; margin-top: 0px; text-align: center">
+                            		<span class="fa fa-user fa-2x"></span><span>User</span>
+                            		</h5>
+                            	</a>
+                       			<ul class="dropdown-menu" role="menu">
+                            		<li><a href="">My Account</a></li>
+                            		<li><a href="">My Wishlist  </a></li>
+                            		<li><a href="">My Cart </a></li>
+                            		<li><a href="">Checkout</a></li>
+                            		<li><a href="">Log In </a></li>
+                        		</ul>
+                    		</li>
+
 						</ul>
 					</div>
+		</div>
+	</div>
+</div>
+</nav>
 
-				</div>
+<!-- Ket thuc header Detail -->
 
-				<!-- My Cart -->
-							<h1>
-							<div style="float: right; cursor: pointer; display: block;">	
-								<span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="position: relative; background-color: inherit; z-index: 999;">
-									<span class="badge badge-notify my-cart-badge">0</span>
-								</span>			
-							</div>
-							</h1>
-				
-
-			</div>
-
-		</nav>
-		<div class="thumbnail">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-5 col-sm-offset-1" style="padding-top: 10px;">
-					<div class="thumbnail" id="sachdaidien">
-						<image src="images/travelbook.jpg" style="box-shadow: 10px 10px 5px #888888; width: 300px; height: 450px; margin-bottom: 5px;">
+<!-- Phan Body Detail -->
+<div class="container-fluid">
+	<div class="row testfade">
+		<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="col-sm-6" style="text-align: center;">
+				<image src="images/travelbook.jpg" class="selectedbook">
+				<div class="row">
+					<div class="zoomout" style="text-align: center; margin-top: 20px;">
+						<ul class="list-inline gallery">    
+							<li><img class="thumbnail zoom" src="images/travelbook.jpg"></li>    
+							<li><img class="thumbnail zoom" src="images/travelbook.jpg"></li>    
+							<li><img class="thumbnail zoom" src="images/travelbook.jpg"></li>    
+						</ul>
 					</div>
 				</div>
-				<div class="col-sm-5">
+			</div>
+			<div class="col-sm-6">
 											<h1 class="booktitle1">Around The World In 21</h1>
 											<h3 class="bookauthor">by James Wong</h3>
 											<div class="star"></div>
@@ -94,170 +148,113 @@
 												*#1 in the world market share - source: Nielsen Bookscan. Australia, UK and USA. March 2012-January 2013
 											</div>
 											<hr style="border-color: #E7E3D8; border-width: 3px;">
-											
-							<div class="row">
-								<div class="col-sm-4">
-									<h3 class="bookprice1">Price: $14.36</h3>				
-								</div>
-								<div class="col-sm-5">
-									<button class="btn btn-danger my-cart-btn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
-								</div>
-							</div>
-				</div>
+
+											<div class="row">
+												<div class="col-sm-6">
+													<h3 class="bookprice1">Price: $14.36</h3>				
+												</div>
+												<div class="col-sm-5">
+													<button class="btn btn-danger my-cart-btn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+												</div>
+											</div>
 			</div>
-		</div>
 		</div>
 	</div>
 
-	<div class="parttwodetail">
-		<div class="col-sm-4 col-sm-offset-1 higlight">
-					<a href="category.html"><h5 id="featuredbooks1">FEATURED BOOKS</h5></a>
-					<hr class="hrfeaturedbooks1"/>
-		</div>
-		<div class="thumbnail" id="sachdaidien">
-			<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-12" style="padding: 0px;">
-					<div id="middleCarousel1" class="carousel slide" data-interval="4000" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#middleCarousel1" data-slide-to="0" class="active"></li>
-							<li data-target="#middleCarousel1" data-slide-to="1"></li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="item active">
-								<div class="row">
-									<div class="col-sm-2 col-sm-offset-1" style="text-align: center;">
-										<a href="#"><img class="otherbooks" src="images/travelbook.jpg"/></a>
-										<a href="#"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-2" style="text-align: center;">
-										<img class="otherbooks" src="images/travelbook.jpg"/>
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-2" style="text-align: center;">
-										<img class="otherbooks" src="images/travelbook.jpg"/>
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-2" style="text-align: center;">
-										<img class="otherbooks" src="images/travelbook.jpg"/>
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-2" style="text-align: center;">
-										<img class="otherbooks" src="images/travelbook.jpg"/>
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-								</div>
-							</div>
-
-							<div class="item">
-								<div class="row">
-									<div class="col-sm-2 col-sm-offset-1" style="text-align: center;">
-										<img class="otherbooks" src="images/travelbook.jpg"/>
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-2" style="text-align: center;">
-										<img class="otherbooks" src="images/travelbook.jpg"/>
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-2" style="text-align: center;">
-										<img class="otherbooks" src="images/travelbook.jpg"/>
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-2" style="text-align: center;">
-										<img class="otherbooks" src="images/travelbook.jpg"/>
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-2" style="text-align: center;">
-										<img class="otherbooks" src="images/travelbook.jpg"/>
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-								</div>
-							</div>
-
-						</div>
-
-						<a class="down left carousel-control" href="#middleCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" style="color: #ECE8DD;"></span></a>
-						<a class="down right carousel-control" href="#middleCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right" style="color: #ECE8DD;"></span></a>
-
-					</div>
-				</div>
+	<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
+	<div class="row testfade">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h1>Comments</h1>
+			<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
+			<div class="comment" style="display: inline-flex; max-width: 100%; margin-bottom: 30px;">
+				
+					<img src="finalprojectimages/avatar.jpg" class="avauser">
+				
+				<div class="dialogbox">
+    				<div class="body">
+      					<span class="tip tip-left"></span>
+      					<div class="message">
+        					<span>I just made a comment about this comment box which is purely made from CSS.I just made a comment about this comment box which is purely made from CSS.I just made a comment about this comment box which is purely made from CSS. </span>
+      					</div>
+    				</div>
+  				</div>
 			</div>
+
+			<div class="comment" style="display: inline-flex; max-width: 100%; margin-bottom: 30px;">
+				
+					<img src="finalprojectimages/avatar2.jpg" class="avauser">
+				
+				<div class="dialogbox">
+    				<div class="body">
+      					<span class="tip tip-left"></span>
+      					<div class="message">
+        					<span>I just made a comment about this comment box which is purely made from CSS.I just made a comment about this comment box which is purely made from CSS.I just made a comment about this comment box which is purely made from CSS. </span>
+      					</div>
+    				</div>
+  				</div>
+			</div>
+			<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
+		</div>
+	</div>
+	<div class="row testfade">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div class="commentuser">
+						<img src="finalprojectimages/avatar2.jpg" class="avauser">
+						<textarea cols="500" rows="1" required style="margin-left: 20px; margin-right: 5px; width: 100%;" placeholder="Add your comment ..."></textarea>
+						<button style="display: block; width: 100px; margin-right: 15px;">Post</button>
 			</div>
 		</div>
+	</div>
+</div>
 
-		<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%;">
+	
+	<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
 
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-sm-2 col-sm-offset-1">
-					<h5 id="featuredbooks1">CUSTOMER REVIEWS</h5>
-					<hr class="hrfeaturedbooks1"/>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1">
-					<div class=" col-sm-10 col-sm-offset-1 commentmau">
-						<p style="font-style: italic;">"This is an awful travel guide, and you would never want to take it with you. But that's not it's purpose. Instead it shows a spread for each country, and gives a few trip planning ideas of must see things to do. This might be the opposite of finding new places off the beaten path, but the pictures give a good glimpse of what that country may look like. Flipping through it, you can quickly get an idea of some countries you may want to visit that you otherwise knew nothing about, and then be able to look for real travel guides for the details you need." - <b class="nguoidung">David Grace</b></p>
-					</div>
-				</div>
-			</div>
-		<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%;">
-			<div class="row">
-				<div class="col-sm-10 col-sm-offset-1">
-				<form name="commentForm">
-					<h5 id="featuredbooks1">ADD COMMENT</h5>
-					<hr class="hrfeaturedbooks1"/>
-					<textarea cols="30" rows="10" required style="width: 100%;"></textarea><br/>
-					<label for="">by:</label><br/>
-					<input type="text" required placeholder="Name" style="width: 100%;"><br/><br/>
-					<input type="submit" value="Submit">
-				</form>
-				</div>
-			</div>
+	<!-- Footer -->
+	<div class="row footer">
+		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
+				<h4>INFORMATION</h4>
+				<a href="#">ABOUT US</a><br/>
+				<a href="#">CUSTOMER SERVICE</a><br>
+				<a href="#">PRIVACY POLICY</a><br>
+				<a href="#">SITE MAP</a><br>
+				<a href="#">ORDERS AND RETURNS</a>
 		</div>
+		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
+			<h4>BENEFITS</h4>
+			<a href="#">SHIPPING AND RETURNS</a><br>
+			<a href="#">PAYMENT ONLINE</a><br>
+			<a href="#">INTERNATIONAL</a><br>
+			<a href="#">DISCOUNTS</a><br>
+			<a href="#">MEMBERSHIP</a>
+		</div>
+		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
+			<h4>CONTACT</h4>
+			<h6>ADDRESS: 7 GRACE.D, BERLIN, GERMANY.</h6>
+			<h6>HOTLINE: (+39) 1234 1234</h6>
+			<h6>EMAIL  : BOOK4LIFE@GE.COM</h6>
+		</div>
+		<div class="col-sm-3" style="color: white; text-align: right;">
+			<h4 style="text-align: left;">FEEDBACK</h4>
+			<input class="feedback" type="text" name="feedback" placeholder="What we could do better?">
+			<button class="btn btn-danger">Send</button>
+		</div>
+	</div>
+
+	<hr style="border-color: white; border-width: 2px; width: 100%; margin: 0px;">
+
+	<div class="row footer" style="padding: 0px; color: white;">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h4>Follow us on: <span class="fa fa-facebook" style="margin-left: 10px; margin-right: 10px;"></span> <span class="fa fa-instagram" style="margin-left: 10px;"></span></h4>
+		</div>
+	</div>	
+
+</div>
 
 
-		<!--test -->
+<!-- Ket thuc Body Detail -->
+
+<!--add to cart -->
 		<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="jsmycart/jquery.mycart.js"></script>
@@ -266,12 +263,10 @@
 
    			var goToCartIcon = function($addTocartBtn){
       		var $cartIcon = $(".my-cart-icon");
-     		var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "999"});
+     		var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "100"});
       		$addTocartBtn.prepend($image);
       		var position = $cartIcon.position();
       		$image.animate({
-       		top: position.top,
-        	left: position.left
       		}, 500 , "linear", function() {
         	$image.remove();
       		});
@@ -382,12 +377,9 @@
 				</div>
 			</div>
 		</div>
-		
-
-		
-
-
-</div>
+		</div>
+	
+</script>
 
 </body>
 </html>

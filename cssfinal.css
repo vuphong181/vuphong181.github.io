@@ -1,11 +1,14 @@
+body {
+	background-color:  #ECE8DD;
+	padding-top: 70px;
+}
+.fixed-nav-bar {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
 .input-group {
 	margin-top: 50px;	
-}
-#logo {
-	width: 100px;
-	height: 100px;
-	margin-top: 25px;
-	margin-bottom: 25px;
 }
 .logoimages {
 	text-align: center;
@@ -13,14 +16,14 @@
 .about {
 	margin-top: 50px;
 }
-.navbar-default {
+.navbar-inverse {
 	border: 0px;
 	margin-bottom: 0px;
-	position: relative;
+	position: fixed;
 }
 .head {
 	text-align: center;
-	margin-right: 35px;
+	margin-right: 5px;
 	margin-left: 5px;
 	
 }
@@ -56,9 +59,6 @@ h5 {
 	background-color: #ECE8DD;
 	padding-right: 0px;
 }
-.parttwodetail {
-
-}
 .highlight {
 	color: black;
    	font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -66,11 +66,9 @@ h5 {
    	font-weight: bolder;
 }
 #highlight {
-	margin: 100px auto 0px 280px;
 	color: #676358;
 }
 #featuredbooks {
-	margin: 10px auto 0px 210px;
 	color: #676358;
 }
 #featuredbooks1 {
@@ -80,15 +78,15 @@ h5 {
 }
 .hrhighlight {
 	width: 80px;
-	margin-top: 10px;
-	margin-left: 280px;
 	border-color: #676358;
+	margin-top: 10px;
+	margin-left: 0px;
 }
 .hrfeaturedbooks {
 	width: 120px;
-	margin-top: 5px;
-	margin-left: 210px;
+	margin-top: 10px;
 	border-color: #676358;
+	margin-left: 0px;
 }
 .hrfeaturedbooks1 {
 	width: 120px;
@@ -97,15 +95,14 @@ h5 {
 	border-color: #676358;
 }
 .bookhighlight {
-	height: 380px;
-	width: 250px;
-	margin-top: 50px;
 	box-shadow: 10px 10px 5px #888888;
+	border: 0px;
+	width: 250px;
+	height: 380px; 
 }
 .booktitle {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-weight: bold;
-	margin-top: 100px;
 }
 .booktitle1 {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -130,7 +127,7 @@ h5 {
 .otherbookauthor {
 	color: #97928C;
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 }
 .bookprice {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -151,16 +148,9 @@ h5 {
 	font-weight: bold;
 	color: #EC791C;
 }
-.img-responsive {
-	height: 200px;
-	width: 133px;
-	box-shadow: 10px 10px 5px #888888;
-	margin-left: -10px;
-	margin-right: -10px;
-}
 .otherbooks {
-	width: 133px;
-	height: 200px;
+	width: 200px;
+	height: 300px;
 	box-shadow: 10px 10px 5px #888888;
 }	
 #middleCarousel {
@@ -178,11 +168,6 @@ h5 {
 }
 .carousel-control.left.down {
 	background-image: linear-gradient(to right,rgba(255, 255, 255, 0.5) 0,rgba(255, 255, 255, 0.0001) 100%);
-}
-.thumbnail {
-	background-color: inherit;
-	border: 0px;
-	margin-bottom: 10px;
 }
 #sachdaidien {
 	box-shadow: none;
@@ -207,7 +192,7 @@ a:hover {
 	background: red;
 	position: relative;
 	top: -20px;
-	right: 10px;
+	right: 48px;
 }
 
 .my-cart-icon {
@@ -219,4 +204,511 @@ a:hover {
     font-weight: 400;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
+    color: white;
+}
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.carttop {
+	float: right;
+	cursor: pointer;
+	display: none;
+}
+@media (max-width:768px) {
+	  .carttop {
+       display: block;
+    }
+}
+
+.carttop2 {
+	float: right;
+	cursor: pointer;
+	display: none;
+	margin-left: 30px;
+}
+@media (min-width:768px) {
+	  .carttop2 {
+       display: block;
+    }
+}
+
+.highlightsub {
+	text-align: left;
+}
+
+@media (max-width: 768px) {
+	  .highlightsub {
+	  	text-align: center;
+	  }
+}
+
+@media only screen and (max-width: 768px) {
+
+   h1 { font-size: 2.0vh; }
+
+}
+
+@media (min-width: 768px){
+ul li {display: inline-block;}
+ul li:hover {background:none;}
+ul li:hover ul {display: block;}
+
+ul li ul li { 
+  background: none; 
+  display: block; 
+}
+}
+
+/*BLUR*/
+
+.bg {
+  position: relative;
+  width: 200px;
+  height: 410px;
+  left: 20%;
+  margin-bottom: 30px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+.bg:hover .overlay {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+
+img .otherbooks {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  left: 0;
+}
+
+.testbtn {
+	position: absolute;
+	opacity: 0;
+  	transition: opacity .35s ease;
+  	top: 220px;
+  	right: 30px;
+}
+
+.bg:hover .testbtn {
+  opacity: 1;
+}
+
+
+
+.topic {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 620px;
+  height: 400px;
+  float: left;
+}
+
+.overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+.topic:hover .overlay1 {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+
+.imagecategory {
+  position: absolute;
+  width: 620px;
+  height: 400px;
+  left: 0;
+}
+
+.bookcategory {
+  position: absolute;
+  width: 620px;
+  left: 0;
+  top: 120px;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+  transition: top .5s ease;
+}
+
+.topic:hover .bookcategory {
+  top: 90px;
+}
+
+.button {
+  position: absolute;
+  width: 620px;
+  left:0;
+  top: 180px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.button a {
+  width: 200px;
+  padding: 12px 48px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+}
+
+.topic:hover .button {
+  opacity: 1;
+}
+
+#searchplace {
+    width: 230px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('finalprojectimages/searchicon.png');
+    background-position: 10px 10px;
+    background-size: 25px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#searchplace:focus {
+    width: 100%;
+}
+
+/**
+ * The "shine" element
+ */
+
+.shine {
+	position: relative;
+  	overflow: hidden;
+  	width: 250px;
+  	height: 380px;
+}
+
+.shine:after {
+  content: "";
+  position: absolute;
+  top: -110%;
+  left: -210%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(30deg);
+  
+  background: rgba(255, 255, 255, 0.13);
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+}
+/* Hover state - trigger effect */
+
+.shine:hover:after {
+  opacity: 1;
+  top: -30%;
+  left: -30%;
+  transition-property: left, top, opacity;
+  transition-duration: 0.7s, 0.7s, 0.15s;
+  transition-timing-function: ease;
+}
+@media (max-width: 768px) {
+	  .shine {
+	  	margin-left: 75px;
+	  }
+}
+
+/* Active state */
+
+.shine:active:after {
+  opacity: 0;
+}
+
+.footer {
+	background-color: #222222;
+}
+.feedback {
+	width: 100%;
+    box-sizing: border-box;
+    border-bottom: : 2px solid #ccc;
+    font-size: 16px;
+    background-color: none;
+    color: black;
+    margin-bottom: 5px;
+}
+
+/* Category CSS */
+
+.headtopic {
+	font-size: 4em;
+	text-align: center;
+	font-weight: bolder;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+@media (max-width: 768px) {
+	.headtopic {
+		font-size: 2em;
+	}
+}
+.bookspace {
+	text-align: center;
+	border: solid 1px;
+	border-color: #222222;	
+	padding: 20px;
+	margin-left: 0px;
+	display: inline-block;
+}
+@media (max-width: 768px) {
+	.bookspace {
+		display: inline-flex;
+	}
+	.tuasach {
+		text-align: left;
+	}
+	
+}
+
+/* ZOOM IN AND BLUR */
+
+
+.zoomin {
+  position: relative;
+  margin-top: 50px;
+  overflow: hidden;
+  width: 230px;
+  height: 320px;
+  margin: 2%;
+}
+
+.overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+.zoomin:hover .overlay2 {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+
+.zoomin img {
+  position: absolute;
+  max-width: 100%;
+  height: 320px;
+  left: 8px;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.testbtn2 {
+	position: absolute;
+	opacity: 0;
+  	transition: opacity .35s ease;
+  	top: 240px;
+    right: 55px;
+}
+
+.zoomin:hover .testbtn2 {
+  opacity: 1;
+}
+
+.zoomin:hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.pager li a {
+	color: #222222;
+}
+.pager li>a, .pager li>span {
+	background-color: white;
+}
+
+/* Detail page */
+.selectedbook {
+	 box-shadow: 10px 10px 5px #888888;
+	 width: 300px; 
+	 height: 450px; 
+	 margin-bottom: 5px;"
+}
+
+/* ZOom out */
+ul.gallery{    
+	margin-left: 3vw;     
+	margin-right:3vw;  
+}    
+
+.zoom {   
+	height: 70px;
+	width: 70px;   
+	-webkit-transition: all 0.35s ease-in-out;    
+	-moz-transition: all 0.35s ease-in-out;    
+	transition: all 0.35s ease-in-out;     
+	cursor: -webkit-zoom-in;      
+	cursor: -moz-zoom-in;      
+	cursor: zoom-in;  
+}     
+
+.zoom:hover,  
+.zoom:active,   
+.zoom:focus {
+/**adjust scale to desired size, 
+add browser prefixes**/
+	-ms-transform: scale(2.5);    
+	-moz-transform: scale(2.5);  
+	-webkit-transform: scale(2.5);  
+	-o-transform: scale(2.5);  
+	transform: scale(2.5);    
+	position:relative;      
+	z-index:100;  
+}
+
+/**To keep upscaled images visible on mobile, 
+increase left & right margins a bit**/  
+@media only screen and (max-width: 768px) {   
+ul.gallery {      
+	margin-left: 15vw;       
+	margin-right: 15vw;
+}
+
+/**TIP: Easy escape for touch screens,
+give gallery's parent container a cursor: pointer.**/
+.DivName {cursor: pointer}
+}
+/* Ket thuc Zoom Out */
+
+/* Fade */
+.testfade {
+    -webkit-animation: fadein 3s; /* Safari and Chrome */
+    -moz-animation: fadein 3s; /* Firefox */
+    -ms-animation: fadein 3s; /* Internet Explorer */
+    -o-animation: fadein 3s; /* Opera */
+    animation: fadein 3s;
+}
+    
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}​
+
+/* Opera */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}​
+/* Ket thuc Fade */
+
+img.avatar {
+	width: 50px;
+	height: 50px;
+}
+
+/* Comment Box */
+
+.tip {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  background: transparent;
+  border: 10px solid white;
+}
+
+.tip-left {
+  top: 10px;
+  left: -25px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;  
+}
+
+.dialogbox .body {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  margin: 5px 20px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 3px;
+  border: 5px solid white;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.body .message {
+  min-height: 30px;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #222222;
+}
+.avauser {
+	width: 70px;
+	height: 70px;"
+}
+@media (max-width: 768px) {
+	.avauser {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+.commentuser {
+	display: inline-flex;
 }

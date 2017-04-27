@@ -6,8 +6,9 @@ $(document).ready(function(e){
 		$('.search-panel span#search_concept').text(concept);
 		$('.input-group #search_param').val(param);
 	});
-		$(document).ready(function(){
-        $('.star').raty({ score: 3 });
+
+		// $(document).ready(function(){
+  //       $('.star').raty({ score: 3 });
     });
 
 });

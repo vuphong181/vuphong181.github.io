@@ -2,240 +2,414 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>ACTION</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Category</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-	 <script src="jsfinal.js"></script>
-	 <link rel="stylesheet" href="cssfinal.css">
+	<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	
+	<!-- File -->
+	 	<link rel="stylesheet" href="cssfinal.css">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+	<!--Angular JS-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-	</script>
-	<link href="https://netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
-	<script src="lib/jquery.raty-fa.js"></script>
-	<script src="demo/javascripts/demo.js"></script>
+	<!--UI Boostrap-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+	<!-- Others -->
+		<link href="https://netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
-	<div class="parttwodetail1">
-				<nav class="navbar navbar-default">
 
-					<div class="row"  style="margin-right: 0px;">
-						<div class="col-lg-10 col-lg-offset-1">
+<!-- Phan header Category -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-10 col-sm-offset-1">
 			
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle  navbar-toggler-right" data-toggle="collapse" data-target="#bookMenu">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
 
-							<div class="collapse navbar-collapse navbar-center" id="myNavbar">
-								<ul class="nav navbar-nav">
-									<li class="head"><a href="index.html"><h5>HOME</h5></a></li>
-									<li class="head"><a href="category.html"><h5>BOOKS</h5></a></li>
-									<li class="head"><a href="category.html"><h5>FICTION</h5></a></li>
-									<li class="head"><a href="category.html"><h5>BIOGRAPHY</h5></a></li>
-									<li class="head"><a href="category.html"><h5>CHILDREN'S BOOKS</h5></a></li>
-									<li class="head"><a href="category.html"><h5>ROMANCE</h5></a></li>
-									<li class="head"><a href="category.html"><h5>HISTORY</h5></a></li>
-									<li class="head"><a href="category.html"><h5>FICTION</h5></a></li>
-								</ul>
-							</div>
-
-						</div>
-					</div>
-	
-				</nav>
-
-
-			<div class="container-fluid">
-				<h3 style="font-weight: bolder; text-align: center;">FICTION</h3>
-				<hr style="border-color: #E7E3D8; border-width: 3px; width: 85%;">
-
-				<div class="row">
-					<div class="col-sm-2 col-sm-offset-1">
-						<button>A-Z</button>
-						<button>Filter</button>
-					</div>
-				</div>
-				<hr style="border-color: #E7E3D8; border-width: 3px; width: 85%;">
-				<div class="row">
-					<div class="col-sm-4 col-sm-offset-3 higlight">
-						<h5 class="bestsellers">BEST SELLERS</h5>
-						<hr class="hrbestsellers"/>
-					</div>
-					<div class="thumbnail">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-12" style="padding: 0px;">
-									<div id="middleCarousel1" class="carousel slide" data-interval="4000" data-ride="carousel">
-										<ol class="carousel-indicators">
-											<li data-target="#middleCarousel1" data-slide-to="0" class="active"></li>
-											<li data-target="#middleCarousel1" data-slide-to="1"></li>
-										</ol>
-													<div class="carousel-inner">
-														<div class="item active">
-															<div class="row">
-																<div class="col-sm-4" style="text-align: center;">
-																	<a href="#"><img class="otherbooks" src="images/travelbook.jpg"/></a>
-																	<a href="#"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-																	<h6 class="otherbookauthor">by James Wong</h6>
-																	<div class="star"></div>
-																	<h5 class="otherbookprice">$14.36</h5>
-																</div>
-
-																<div class="col-lg-4" style="text-align: center;">
-																	<img class="otherbooks" src="images/travelbook.jpg"/>
-																	<h5 class="otherbooktitle">Around The World In 21</h5>
-																	<h6 class="otherbookauthor">by James Wong</h6>
-																	<div class="star"></div>
-																	<h5 class="otherbookprice">$14.36</h5>
-																</div>
-
-																<div class="col-lg-4" style="text-align: center;">
-																	<img class="otherbooks" src="images/travelbook.jpg"/>
-																	<h5 class="otherbooktitle">Around The World In 21</h5>
-																	<h6 class="otherbookauthor">by James Wong</h6>
-																	<div class="star"></div>
-																	<h5 class="otherbookprice">$14.36</h5>
-																</div>
-
-															</div>
-														</div>
-
-														<div class="item">
-															<div class="row">
-																<div class="col-lg-4" style="text-align: center;">
-																	<img class="otherbooks" src="images/travelbook.jpg"/>
-																	<h5 class="otherbooktitle">Around The World In 21</h5>
-																	<h6 class="otherbookauthor">by James Wong</h6>
-																	<div class="star"></div>
-																	<h5 class="otherbookprice">$14.36</h5>
-																</div>
-
-																<div class="col-lg-4" style="text-align: center;">
-																	<img class="otherbooks" src="images/travelbook.jpg"/>
-																	<h5 class="otherbooktitle">Around The World In 21</h5>
-																	<h6 class="otherbookauthor">by James Wong</h6>
-																	<div class="star"></div>
-																	<h5 class="otherbookprice">$14.36</h5>
-																</div>
-
-																<div class="col-lg-4" style="text-align: center;">
-																	<img class="otherbooks" src="images/travelbook.jpg"/>
-																	<h5 class="otherbooktitle">Around The World In 21</h5>
-																	<h6 class="otherbookauthor">by James Wong</h6>
-																	<div class="star"></div>
-																	<h5 class="otherbookprice">$14.36</h5>
-																</div>
-
-															</div>
-														</div>
-
-													</div>
-
-						<a class="down left carousel-control" href="#middleCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" style="color: #ECE8DD;"></span></a>
-						<a class="down right carousel-control" href="#middleCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right" style="color: #ECE8DD;"></span></a>
-
+						<a class="navbar-brand" href="index.html"><img src="images/logomac1.png" style="width: 50px; height: 50px; margin-top: -10px;" alt=""><div style="width: 80px; height: 50px;"></div></a>
+						<a class="navbar-brand" href="#">
+								<!-- My Cart -->
+								<h2 style="margin-top: 0px;">
+									<div class="carttop">	
+										<span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="position: relative; background-color: inherit; z-index: 999;">
+											<span class="badge badge-notify my-cart-badge">0</span>
+										</span>			
 									</div>
-								</div>
-							</div>
-						</div>
-
-						<hr style="border-color: #E7E3D8; border-width: 3px; width: 85%;">
-						<div class="col-sm-4 col-sm-offset-3 higlight">
-							<h5 class="bestsellers">OTHER BOOKS</h5>
-							<hr class="hrbestsellers"/>
-						</div>
-
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="col-sm-3" style="text-align: center;">
-										<img src="images/travelbook.jpg" class="otherbooks">
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-3" style="text-align: center;">
-										<img src="images/travelbook.jpg" class="otherbooks">
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-3" style="text-align: center;">
-										<img src="images/travelbook.jpg" class="otherbooks">
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-3" style="text-align: center;">
-										<img src="images/travelbook.jpg" class="otherbooks">
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-								</div>
-							</div>
-													<br/><br/>
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="col-sm-3" style="text-align: center;">
-										<img src="images/travelbook.jpg" class="otherbooks">
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-3" style="text-align: center;">
-										<img src="images/travelbook.jpg" class="otherbooks">
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-3" style="text-align: center;">
-										<img src="images/travelbook.jpg" class="otherbooks">
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-									<div class="col-sm-3" style="text-align: center;">
-										<img src="images/travelbook.jpg" class="otherbooks">
-										<h5 class="otherbooktitle">Around The World In 21</h5>
-										<h6 class="otherbookauthor">by James Wong</h6>
-										<div class="star"></div>
-										<h5 class="otherbookprice">$14.36</h5>
-									</div>
-
-								</div>
-							</div>
-
-						</div>
+								</h2>	
+						</a>
 
 					</div>
-				</div>
 
-			</div>
+					<ul class="nav navbar-nav navbar-right carttop2">
+						<li>
+							<!-- My Cart -->
+								<h2 style="margin-top: 15px;">
+									<div class="carttop2">	
+										<span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="position: relative; background-color: inherit; z-index: 999;">
+											<span class="badge badge-notify my-cart-badge">0</span>
+										</span>			
+									</div>
+								</h2>
+						</li>
+					</ul>
+
+					<div class="collapse navbar-collapse navbar-center" id="bookMenu">
+						<ul class="nav navbar-nav">
+							<li class="head"><a href="#"><h5>HOME</h5></a></li>
+							<li class="head">
+								<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+									<h5>
+                            			BOOKS <span class="caret"></span>
+                            		</h5>
+                            	</a>
+                       				<ul class="dropdown-menu" role="menu">
+                            			<li><a href="category.html">Business</a></li>
+                            			<li><a href="category.html">Children</a></li>
+                            			<li><a href="category.html">Romance</a></li>
+                            			<li><a href="category.html">Horror</a></li>
+                            			<li class="divider"></li>
+                            			<li><a href="category.html">Others</a>
+                        			</ul>
+
+
+
+							<li class="head"><a href="#"><h5>ADMIN</h5></a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+                        		<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        			<h5 style="margin-bottom: 0px; margin-top: 0px; text-align: center">
+                            		<span class="fa fa-user fa-2x"></span><span>User</span>
+                            		</h5>
+                            	</a>
+                       			<ul class="dropdown-menu" role="menu">
+                            		<li><a href="">My Account</a></li>
+                            		<li><a href="">My Wishlist  </a></li>
+                            		<li><a href="">My Cart </a></li>
+                            		<li><a href="">Checkout</a></li>
+                            		<li><a href="">Log In </a></li>
+                        		</ul>
+                    		</li>
+
+						</ul>
+					</div>
+		</div>
 	</div>
+</div>
+</nav>
+
+<!-- Ket thuc header Category -->
+
+<!-- Phan Body Category -->
+<div class="container-fluid">
+<div class="testfade">
+	<div class="row">
+		<p class="headtopic">business</p>
+		<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3" style="text-align: center;">
+			<div class="col-sm-4" style="margin-bottom: 50px;">
+				<div class="bookspace">
+					<div class="zoomin">
+						<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
+						<div class="overlay2"></div>
+						<button class="btn btn-danger my-cart-btn testbtn2" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+					</div>
+					<hr style="border-color: #222222;">
+					<div class="tuasach">
+					<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
+					<h6 class="otherbookauthor">by James Wong</h6>
+					<h5 class="otherbookprice">$14.36</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4" style="margin-bottom: 50px;">
+				<div class="bookspace">
+					<div class="zoomin">
+						<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
+						<div class="overlay2"></div>
+						<button class="btn btn-danger my-cart-btn testbtn2" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+					</div>
+					<hr style="border-color: #222222;">
+					<div class="tuasach">
+					<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
+					<h6 class="otherbookauthor">by James Wong</h6>
+					<h5 class="otherbookprice">$14.36</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4" style="margin-bottom: 50px;">
+				<div class="bookspace">
+					<div class="zoomin">
+						<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
+						<div class="overlay2"></div>
+						<button class="btn btn-danger my-cart-btn testbtn2" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+					</div>
+					<hr style="border-color: #222222;">
+					<div class="tuasach">
+					<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
+					<h6 class="otherbookauthor">by James Wong</h6>
+					<h5 class="otherbookprice">$14.36</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3" style="text-align: center;">
+			<div class="col-sm-4">
+				<div class="bookspace">
+					<div class="zoomin">
+						<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
+						<div class="overlay2"></div>
+						<button class="btn btn-danger my-cart-btn testbtn2" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+					</div>
+					<hr style="border-color: #222222;">
+					<div class="tuasach">
+					<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
+					<h6 class="otherbookauthor">by James Wong</h6>
+					<h5 class="otherbookprice">$14.36</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="bookspace">
+					<div class="zoomin">
+						<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
+						<div class="overlay2"></div>
+						<button class="btn btn-danger my-cart-btn testbtn2" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+					</div>
+					<hr style="border-color: #222222;">
+					<div class="tuasach">
+					<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
+					<h6 class="otherbookauthor">by James Wong</h6>
+					<h5 class="otherbookprice">$14.36</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="bookspace">
+					<div class="zoomin">
+						<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
+						<div class="overlay2"></div>
+						<button class="btn btn-danger my-cart-btn testbtn2" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+					</div>
+					<hr style="border-color: #222222;">
+					<div class="tuasach">
+					<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
+					<h6 class="otherbookauthor">by James Wong</h6>
+					<h5 class="otherbookprice">$14.36</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12" style="text-align: center;">
+			<ul class="pager">
+				<li>
+					<a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+				</li>
+				<li class="active"><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li>
+					<a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 10px;">
+</div>
+
+	<!-- Footer -->
+	<div class="row footer">
+		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
+				<h4>INFORMATION</h4>
+				<a href="#">ABOUT US</a><br/>
+				<a href="#">CUSTOMER SERVICE</a><br>
+				<a href="#">PRIVACY POLICY</a><br>
+				<a href="#">SITE MAP</a><br>
+				<a href="#">ORDERS AND RETURNS</a>
+		</div>
+		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
+			<h4>BENEFITS</h4>
+			<a href="#">SHIPPING AND RETURNS</a><br>
+			<a href="#">PAYMENT ONLINE</a><br>
+			<a href="#">INTERNATIONAL</a><br>
+			<a href="#">DISCOUNTS</a><br>
+			<a href="#">MEMBERSHIP</a>
+		</div>
+		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
+			<h4>CONTACT</h4>
+			<h6>ADDRESS: 7 GRACE.D, BERLIN, GERMANY.</h6>
+			<h6>HOTLINE: (+39) 1234 1234</h6>
+			<h6>EMAIL  : BOOK4LIFE@GE.COM</h6>
+		</div>
+		<div class="col-sm-3" style="color: white; text-align: right;">
+			<h4 style="text-align: left;">FEEDBACK</h4>
+			<input class="feedback" type="text" name="feedback" placeholder="What we could do better?">
+			<button class="btn btn-danger">Send</button>
+		</div>
+	</div>
+
+	<hr style="border-color: white; border-width: 2px; width: 100%; margin: 0px;">
+
+	<div class="row footer" style="padding: 0px; color: white;">
+		<div class="col-sm-6 col-sm-offset-3">
+			<h4>Follow us on: <span class="fa fa-facebook" style="margin-left: 10px; margin-right: 10px;"></span> <span class="fa fa-instagram" style="margin-left: 10px;"></span></h4>
+		</div>
+	</div>	
+
+
+
+</div>
+<!-- Ket thuc Body Category -->
+
+<!--add to cart -->
+		<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="jsmycart/jquery.mycart.js"></script>
+		<script type="text/javascript">
+  			$(function () {
+
+   			var goToCartIcon = function($addTocartBtn){
+      		var $cartIcon = $(".my-cart-icon");
+     		var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "100"});
+      		$addTocartBtn.prepend($image);
+      		var position = $cartIcon.position();
+      		$image.animate({
+      		}, 500 , "linear", function() {
+        	$image.remove();
+      		});
+    		}
+
+    		$('.my-cart-btn').myCart({
+      		classCartIcon: 'my-cart-icon',
+      		classCartBadge: 'my-cart-badge',
+      		affixCartIcon: true,
+      		checkoutCart: function(products) {
+        	$.each(products, function(){
+          	console.log(this);
+        	});
+     		},
+      		clickOnAddToCart: function($addTocart){
+        	goToCartIcon($addTocart);
+      		},
+      		getDiscountPrice: function(products) {
+        	var total = 0;
+        	$.each(products, function(){
+          	total += this.quantity * this.price;
+       		});
+        	return total * 0.5;
+      		}
+    		});
+
+  			});
+  		</script>
+		
+		<script type="text/javascript">
+
+  			var _gaq = _gaq || [];
+  			_gaq.push(['_setAccount', 'UA-36251023-1']);
+  			_gaq.push(['_setDomainName', 'jqueryscript.net']);
+ 			_gaq.push(['_trackPageview']);
+
+  			(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  			})();
+
+		</script>
+
+		<div class="modal fade" id="my-cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;"><div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</h4>
+				</div>
+
+				<div class="modal-body">
+					<table class="table table-hover table-responsive" id="my-cart-table">
+						<tbody>
+							<tr title="summary 1" data-id="1" data-price="10">
+								<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="images/travelbook.jpg"></td>
+								<td>product 1</td>
+								<td title="Unit Price">$10</td>
+								<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="my-product-quantity" value="4"></td>
+								<td title="Total" class="my-product-total">$40</td>
+								<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger my-product-remove">X</a></td>
+							</tr>
+
+							<tr title="summary 2" data-id="2" data-price="20">
+								<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="images/travelbook.jpg"></td>
+								<td>product 2</td>
+								<td title="Unit Price">$20</td>
+								<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="my-product-quantity" value="2"></td>
+								<td title="Total" class="my-product-total">$40</td>
+								<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger my-product-remove">X</a></td>
+							</tr>
+
+							<tr title="summary 3" data-id="3" data-price="30">
+								<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="images/travelbook.jpg"></td>
+								<td>product 3</td><td title="Unit Price">$30</td>
+								<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="my-product-quantity" value="5"></td>
+								<td title="Total" class="my-product-total">$150</td>
+								<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger my-product-remove">X</a></td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td><strong>Total</strong></td>
+								<td></td>
+								<td></td>
+								<td><strong id="my-cart-grand-total">$230</strong></td>
+								<td></td>
+							</tr>
+
+							<tr style="color: red">
+								<td></td>
+								<td><strong>Total (including discount)</strong></td>
+								<td></td>
+								<td></td>
+								<td><strong id="my-cart-discount-price">$115</strong></td>
+								<td></td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="checkout-my-cart">Checkout</button>
+				</div>
+			</div>
+		</div>
+		</div>
+	
+</script>
+
 </body>
 </html>
