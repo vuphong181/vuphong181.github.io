@@ -70,7 +70,7 @@ app.controller('bookCtrl', ['$scope', '$http', '$location', '$routeParams', '$co
     }
 
   $scope.getCategories = function() {
-        $http.get("http://green-web-bookstore.herokuapp.com/api/genres").success(function(response) {
+        $http.get("https://green-web-bookstore.herokuapp.com/api/genres").success(function(response) {
             $scope.categories = response;
         });
       }
