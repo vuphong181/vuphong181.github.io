@@ -1,6 +1,7 @@
 body {
-	background-color:  #ECE8DD;
+	background-color:  white;
 	padding-top: 70px;
+	position: relative;
 }
 .fixed-nav-bar {
   position: fixed;
@@ -113,6 +114,8 @@ h5 {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-weight: bolder;
 	margin-top: 25px;
+	line-height: 18px;
+	color: white;
 }
 .subbooktitle {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -125,9 +128,10 @@ h5 {
 	margin-bottom: 20px;
 }
 .otherbookauthor {
-	color: #97928C;
+	color: white;
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
 	margin-bottom: 5px;
+	font-weight: bolder;
 }
 .bookprice {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -146,7 +150,8 @@ h5 {
 	font-family: 'Times New Roman',Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-size: 1.5em;
 	font-weight: bold;
-	color: #EC791C;
+	color: red;
+	text-shadow: 2px 1px white;
 }
 .otherbooks {
 	width: 200px;
@@ -196,6 +201,17 @@ a:hover {
 }
 
 .my-cart-icon {
+	position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+}
+.my-account {
 	position: relative;
     top: 1px;
     display: inline-block;
@@ -271,9 +287,8 @@ ul li ul li {
 .bg {
   position: relative;
   width: 200px;
-  height: 410px;
+  height: 370px;
   left: 20%;
-  margin-bottom: 30px;
 }
 
 .overlay {
@@ -288,7 +303,7 @@ ul li ul li {
 
 .bg:hover .overlay {
   display: block;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .5);
 }
 
 img .otherbooks {
@@ -307,6 +322,19 @@ img .otherbooks {
 }
 
 .bg:hover .testbtn {
+  opacity: 1;
+}
+
+.tuasach {
+	position: absolute;
+	opacity: 0;
+  	transition: opacity .35s ease;
+  	top: 10px;
+  	right: 0px;
+  	left: 0px;
+}
+
+.bg:hover .tuasach {
   opacity: 1;
 }
 
@@ -386,24 +414,20 @@ img .otherbooks {
 }
 
 #searchplace {
-    width: 230px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('finalprojectimages/searchicon.png');
-    background-position: 10px 10px;
-    background-size: 25px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
+    width: 100%;
     transition: width 0.4s ease-in-out;
 }
 
-#searchplace:focus {
-    width: 100%;
+#searchplace1 {
+	display: none;
+    text-align: center;
 }
+@media (max-width: 768px){
+	#searchplace1 {
+		display: block;
+	}
+}
+
 
 /**
  * The "shine" element
@@ -491,15 +515,7 @@ img .otherbooks {
 	padding: 20px;
 	margin-left: 0px;
 	display: inline-block;
-}
-@media (max-width: 768px) {
-	.bookspace {
-		display: inline-flex;
-	}
-	.tuasach {
-		text-align: left;
-	}
-	
+	width: 100%;
 }
 
 /* ZOOM IN AND BLUR */
@@ -538,6 +554,27 @@ img .otherbooks {
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+.tuychinh {
+	position: absolute;
+	opacity: 0;
+  	transition: opacity .35s ease;
+  	top: 160px;
+    right: 50px;
+}
+.bg:hover .tuychinh {
+  opacity: 1;
+}
+
+.xoabo {
+	position: absolute;
+	opacity: 0;
+  	transition: opacity .35s ease;
+  	top: 200px;
+    right: 67px;
+}
+.bg:hover .xoabo {
+  opacity: 1;
 }
 
 .testbtn2 {
@@ -711,4 +748,518 @@ img.avatar {
 
 .commentuser {
 	display: inline-flex;
+}
+.panel-default {
+	border: none;
+}
+.panel-default>.panel-heading {
+    color: white;
+    background-color: #222;
+}
+.nav-stacked>li+li {
+    border-top: 2px solid #E7E7E7;
+}
+@media (max-width: 768px) {
+	.toolbar {
+		display: none;
+	}
+}
+@media (max-width: 768px) {
+	.detailsachresponsive {
+		text-align: center;
+	}
+}
+
+/** Login template **/
+#login-modal .modal-dialog {
+    width: 350px;
+}
+
+#login-modal input[type=text], input[type=password] {
+	margin-top: 10px;
+}
+
+#div-login-msg,
+#div-lost-msg,
+#div-register-msg {
+    border: 1px solid #dadfe1;
+    height: 30px;
+    line-height: 28px;
+    transition: all ease-in-out 500ms;
+}
+
+#div-login-msg.success,
+#div-lost-msg.success,
+#div-register-msg.success {
+    border: 1px solid #68c3a3;
+    background-color: #c8f7c5;
+}
+
+#div-login-msg.error,
+#div-lost-msg.error,
+#div-register-msg.error {
+    border: 1px solid #eb575b;
+    background-color: #ffcad1;
+}
+
+#icon-login-msg,
+#icon-lost-msg,
+#icon-register-msg {
+    width: 30px;
+    float: left;
+    line-height: 28px;
+    text-align: center;
+    background-color: #dadfe1;
+    margin-right: 5px;
+    transition: all ease-in-out 500ms;
+}
+
+#icon-login-msg.success,
+#icon-lost-msg.success,
+#icon-register-msg.success {
+    background-color: #68c3a3 !important;
+}
+
+#icon-login-msg.error,
+#icon-lost-msg.error,
+#icon-register-msg.error {
+    background-color: #eb575b !important;
+}
+
+#img_logo {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .2;
+}
+
+.modal-content {
+    background-color: #ececec;
+    border: 1px solid #bdc3c7;
+    border-radius: 0px;
+    outline: 0;
+}
+
+.modal-header {
+    min-height: 16.43px;
+    padding: 15px 15px 15px 15px;
+    border-bottom: 0px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 5px 15px 5px 15px;
+}
+
+.modal-footer {
+    padding: 15px 15px 15px 15px;
+    text-align: left;
+    border-top: 0px;
+}
+
+.checkbox {
+    margin-bottom: 0px;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+    border-radius: 0px;
+}
+
+.btn-link {
+    padding: 5px 10px 0px 0px;
+    color: #95a5a6;
+}
+
+.btn-link:hover, .btn-link:focus {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.glyphicon {
+    top: 0px;
+}
+
+.form-control {
+  border-radius: 0px;
+}
+
+/** Comment Box **/
+
+.panel-shadow {
+    box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
+}
+.panel-white {
+  border: 1px solid #dddddd;
+}
+.panel-white  .panel-heading {
+  color: #333;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.panel-white  .panel-footer {
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.post .post-heading {
+  height: 95px;
+  padding: 20px 15px;
+}
+.post .post-heading .avatar {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin-right: 15px;
+}
+.ava-comment {
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin-left: 10px; 
+}
+.ava-user {
+	width: 25px;
+	height: 25px;
+}
+.post .post-heading .meta .title {
+  margin-bottom: 0;
+}
+.post .post-heading .meta .title a {
+  color: black;
+}
+.post .post-heading .meta .title a:hover {
+  color: #aaaaaa;
+}
+.post .post-heading .meta .time {
+  margin-top: 8px;
+  color: #999;
+}
+.post .post-image .image {
+  width: 100%;
+  height: auto;
+}
+.post .post-description {
+  padding: 15px;
+}
+.post .post-description p {
+  font-size: 14px;
+}
+.post .post-description .stats {
+  margin-top: 20px;
+}
+.post .post-description .stats .stat-item {
+  display: inline-block;
+  margin-right: 15px;
+}
+.post .post-description .stats .stat-item .icon {
+  margin-right: 8px;
+}
+.post .post-footer {
+  border-top: 1px solid #ddd;
+  padding: 15px;
+}
+.post .post-footer .input-group-addon a {
+  color: #454545;
+}
+.post .post-footer .comments-list {
+  padding: 0;
+  margin-top: 20px;
+  list-style-type: none;
+}
+.post .post-footer .comments-list .comment {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+}
+.post .post-footer .comments-list .comment .avatar {
+  width: 35px;
+  height: 35px;
+}
+.post .post-footer .comments-list .comment .comment-heading {
+  display: block;
+  width: 100%;
+}
+.post .post-footer .comments-list .comment .comment-heading .user {
+  font-size: 14px;
+  font-weight: bold;
+  display: inline;
+  margin-top: 0;
+  margin-right: 10px;
+}
+.post .post-footer .comments-list .comment .comment-heading .time {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 0;
+  display: inline;
+}
+.post .post-footer .comments-list .comment .comment-body {
+  margin-left: 50px;
+}
+.post .post-footer .comments-list .comment > .comments-list {
+  margin-left: 50px;
+}
+/** Datepicker **/
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+
+/*
+ *
+ *   SCSS by Creative Tim
+ *   http://www.creative-tim.com
+ *
+ */
+
+.datepicker {
+    top: 0;
+    left: 0;
+    padding: 4px;
+    margin-top: 1px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.datepicker>div {
+    display: none;
+}
+
+.datepicker table {
+    width: 100%;
+    margin: 0;
+}
+
+.datepicker td,
+.datepicker th {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.datepicker td {
+    text-align: center;
+}
+
+.datepicker td p {
+    font-size: 1em;
+    font-weight: 400;
+    border-radius: 50%;
+    height: 29px;
+    line-height: 29px;
+    margin: 3px 0 8px;
+    width: 29px;
+}
+
+.datepicker td :hover {
+    cursor: pointer;
+}
+
+.datepicker th {
+    font-weight: 500;
+}
+
+.datepicker th.switch-datepicker {
+    font-size: 1em;
+}
+
+.datepicker .prev p,
+.datepicker .next p {
+    font-size: 1.825em;
+}
+
+.datepicker p:hover {
+    background: #eeeeee;
+}
+
+.datepicker .day.disabled {
+    color: #eeeeee;
+}
+
+.datepicker td.old,
+.datepicker td.new {
+    color: #999999;
+    border-top: 0;
+}
+
+.datepicker td.active p,
+.datepicker td.active:hover p {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    background-color: #9c27b0;
+}
+
+.datepicker td.primary p,
+.datepicker td.primary:hover p {
+    background-color: #9c27b0;
+}
+
+.datepicker td.info p,
+.datepicker td.info:hover p {
+    background-color: #03a9f4;
+}
+
+.datepicker td.success p,
+.datepicker td.success:hover p {
+    background-color: #4caf50;
+}
+
+.datepicker td.warning p,
+.datepicker td.warning:hover p {
+    background-color: #fbc02d;
+}
+
+.datepicker td.danger p,
+.datepicker td.danger:hover p {
+    background-color: #f44336;
+}
+
+.datepicker span {
+    display: block;
+    width: 55px;
+    height: 54px;
+    line-height: 54px;
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.datepicker span.old {
+    color: #999999;
+}
+
+.datepicker span.active,
+.datepicker span.active:focus,
+.datepicker span.active:hover,
+.datepicker span.active:active {
+    background-color: #9c27b0;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.datepicker span.active {
+    color: #FFFFFF;
+}
+
+.datepicker span:hover {
+    background-color: #EEEEEE;
+}
+
+.datepicker span.primary,
+.datepicker span.primary:hover {
+    background-color: #9c27b0;
+}
+
+.datepicker span.info,
+.datepicker span.info:hover {
+    background-color: #03a9f4;
+}
+
+.datepicker span.success,
+.datepicker span.success:hover {
+    background-color: #4caf50;
+}
+
+.datepicker span.warning,
+.datepicker span.warning:hover {
+    background-color: #fbc02d;
+}
+
+.datepicker span.danger,
+.datepicker span.danger:hover {
+    background-color: #f44336;
+}
+
+.datepicker th.switch-datepicker {
+    width: 145px;
+}
+
+.datepicker th.next,
+.datepicker th.prev {
+    font-size: 21px;
+}
+
+.datepicker thead tr:first-child th {
+    cursor: pointer;
+}
+
+.datepicker thead tr:first-child th:hover {
+    background: #eeeeee;
+}
+
+.datepicker.dropdown-menu {
+    border-radius: 3px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 150ms linear;
+    -moz-transition: all 150ms linear;
+    -o-transition: all 150ms linear;
+    -ms-transition: all 150ms linear;
+    transition: all 150ms linear;
+    margin-top: -20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.datepicker.dropdown-menu.open {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 1px;
+}
+
+.datepicker .table-condensed>tbody>tr>td {
+    padding: 2px;
+}
+
+.datepicker .table-condensed>thead>tr>th {
+    padding: 0;
+}
+
+.input-append.date .add-on i,
+.input-prepend.date .add-on i {
+    display: block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.datepicker-months thead {
+    padding: 0 0 3px;
+    display: block;
+}
+.input-group {
+	margin-top: 0px;
+}
+/** Carousel **/
+.carousel .carousel-indicators li {
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
 }

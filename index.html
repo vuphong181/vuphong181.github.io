@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,22 +13,38 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	
 	<!-- File -->
+		<link rel="stylesheet" href="textAngular.css">	
 	 	<link rel="stylesheet" href="cssfinal.css">
+	 	<link rel="stylesheet" href="pagination.css">
 
 	<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!--Angular JS-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-route.min.js"></script>
 
 	<!--UI Boostrap-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
 	<!-- Others -->
 		<link href="https://netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
+		<script src="testRoute.js"></script>
+	<!-- Text Angular -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
+    	<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
+    	<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
+		<link rel="stylesheet" href="textAngular.css" type="text/css">
+	<!-- Angular Cookies -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-cookies.min.js'></script>
+	<!-- Rating & Pagination -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-rangy.min.js'></script>
+    	<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular-sanitize.min.js'></script>
+    	<script src='https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.min.js'></script>
+   	<!-- Datepicker -->
+   	
 </head>
-<body>
+<body ng-app="myApp" ng-controller="bookCtrl">
 <!-- Phan header -->
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -41,7 +59,7 @@
 							<span class="icon-bar"></span>
 						</button>
 
-						<a class="navbar-brand" href="#"><img src="images/logomac1.png" style="width: 50px; height: 50px; margin-top: -10px;" alt=""><div style="width: 80px; height: 50px;"></div></a>
+						<a class="navbar-brand" href="#/"><img src="images/logomac1.png" style="width: 50px; height: 50px; margin-top: -10px;" alt=""><div style="width: 80px; height: 50px;"></div></a>
 						<a class="navbar-brand" href="#">
 								<!-- My Cart -->
 								<h2 style="margin-top: 0px;">
@@ -69,40 +87,40 @@
 					</ul>
 
 					<div class="collapse navbar-collapse navbar-center" id="bookMenu">
-						<ul class="nav navbar-nav">
-							<li class="head"><a href="#"><h5>HOME</h5></a></li>
+						<ul class="nav navbar-nav"  ng-init="getCategories()">
+							<li class="head"><a href="#/"><h5>TRANG CHỦ</h5></a></li>
 							<li class="head">
-								<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								<a href="#categories" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 									<h5>
-                            			BOOKS <span class="caret"></span>
+                            			SÁCH <span class="caret"></span>
                             		</h5>
                             	</a>
-                       				<ul class="dropdown-menu" role="menu">
-                            			<li><a href="category.html">Business</a></li>
-                            			<li><a href="category.html">Children</a></li>
-                            			<li><a href="category.html">Romance</a></li>
-                            			<li><a href="category.html">Horror</a></li>
-                            			<li class="divider"></li>
-                            			<li><a href="category.html">Others</a>
+                            		<ul class="dropdown-menu" role="menu">
+                            			<li ng-repeat="categories in categories"><a href="#category/{{categories._id}}">{{categories.name}}</a></li>
                         			</ul>
 
-
-
-							<li class="head"><a href="#"><h5>ADMIN</h5></a></li>
+							<li ng-show="isLogged()" class="head"><a href="#admin"><h5>ADMIN</h5></a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown">
-                        		<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        			<h5 style="margin-bottom: 0px; margin-top: 0px; text-align: center">
-                            		<span class="fa fa-user fa-2x"></span><span>User</span>
+							<li ng-hide="isLogged()">
+								<a href="" class="dropdown-toggle" data-toggle="modal" data-target="#login-modal" role="button" aria-expanded="false">
+									<h5 style="margin-bottom: 0px; margin-top: 0px; text-align: center">
+                            		<span class="fa fa-user fa-2x"></span><span> ĐĂNG NHẬP</span>
                             		</h5>
                             	</a>
+							</li>
+							<li ng-show="isLogged()" class="dropdown" ng-init="init()">
+								<a href="" class="dropdown-toggle" data-toggle="dropdown">
+									<h5 style="margin-bottom: 0px; margin-top: 10px; text-align: center; text-transform: uppercase;">
+									Xin chào {{user.name}}<span class="caret"></span>
+									<img ng-src="{{user.avatarUrl}}" class="img-circle ava-user" alt="user profile image">
+									</h5>
+								</a>
                        			<ul class="dropdown-menu" role="menu">
-                            		<li><a href="">My Account</a></li>
-                            		<li><a href="">My Wishlist  </a></li>
-                            		<li><a href="">My Cart </a></li>
-                            		<li><a href="">Checkout</a></li>
-                            		<li><a href="">Log In </a></li>
+                            		<li><a href="">Tài khoản của tôi</a></li>
+                            		<li><a href="">Danh sách</a></li>
+                            		<li><a href="">Thanh toán</a></li>
+                            		<li><a href="" ng-click="logOut()">Đăng xuất</a></li>
                         		</ul>
                     		</li>
 
@@ -115,256 +133,51 @@
 
 <!-- Ket thuc header -->
 
-<!-- Mo dau body 1-->
-<div class="container-fluid" style="padding-top: 10px;">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1" style="text-align: center;">
-			<h1 style="font-weight: bold;">Welcome to the official website of Phong</h1>
-			<p>This website will take you into the world of books, where you can fulfill your knowledge and images</p>
-			
-			<form>
-			  	<input id="searchplace" type="text" name="search" placeholder="Search..">
-			</form>
+<div ng-view></div>
 
-
-			<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 50px;">
-		</div>
-	</div>
-			<!-- Carousel 1 -->
-	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
-			<div id="middleCarousel1" class="carousel slide" data-interval="40000" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#middleCarousel1" data-slide-to="0" class="active"></li>
-					<li data-target="#middleCarousel1" data-slide-to="1"></li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="item active">
-						<div class="row">
-							<div class="col-sm-3" style="text-align: center;">
-								<div class="bg">
-									<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
-									<div class="overlay"></div>
-									<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>		
-									<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-									<h6 class="otherbookauthor">by James Wong</h6>
-									<div class="star"></div>
-									<h5 class="otherbookprice">$14.36</h5>
-								</div>
-							</div>
-							<div class="col-sm-3" style="text-align: center;">
-								<div class="bg">
-									<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
-									<div class="overlay"></div>
-									<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>		
-									<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-									<h6 class="otherbookauthor">by James Wong</h6>
-									<div class="star"></div>
-									<h5 class="otherbookprice">$14.36</h5>
-								</div>
-							</div>
-							<div class="col-sm-3" style="text-align: center;">
-								<div class="bg">
-									<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
-									<div class="overlay"></div>
-									<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>		
-									<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-									<h6 class="otherbookauthor">by James Wong</h6>
-									<div class="star"></div>
-									<h5 class="otherbookprice">$14.36</h5>
-								</div>
-							</div>
-							<div class="col-sm-3" style="text-align: center;">
-								<div class="bg">
-									<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
-									<div class="overlay"></div>
-									<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>		
-									<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-									<h6 class="otherbookauthor">by James Wong</h6>
-									<div class="star"></div>
-									<h5 class="otherbookprice">$14.36</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="item">
-						<div class="row">
-							<div class="col-sm-3" style="text-align: center;">
-								<div class="bg">
-									<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
-									<div class="overlay"></div>
-									<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>		
-									<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-									<h6 class="otherbookauthor">by James Wong</h6>
-									<div class="star"></div>
-									<h5 class="otherbookprice">$14.36</h5>
-								</div>
-							</div>
-							<div class="col-sm-3" style="text-align: center;">
-								<div class="bg">
-									<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
-									<div class="overlay"></div>
-									<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>		
-									<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-									<h6 class="otherbookauthor">by James Wong</h6>
-									<div class="star"></div>
-									<h5 class="otherbookprice">$14.36</h5>
-								</div>
-							</div>
-							<div class="col-sm-3" style="text-align: center;">
-								<div class="bg">
-									<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
-									<div class="overlay"></div>
-									<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>		
-									<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-									<h6 class="otherbookauthor">by James Wong</h6>
-									<div class="star"></div>
-									<h5 class="otherbookprice">$14.36</h5>
-								</div>
-							</div>
-							<div class="col-sm-3" style="text-align: center;">
-								<div class="bg">
-									<img class="otherbooks" src="images/travelbook.jpg" alt=""/>
-									<div class="overlay"></div>
-									<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>		
-									<a href="detail.html"><h5 class="otherbooktitle">Around The World In 21</h5></a>
-									<h6 class="otherbookauthor">by James Wong</h6>
-									<div class="star"></div>
-									<h5 class="otherbookprice">$14.36</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-				</div>	
-
-				<a class="down left carousel-control" href="#middleCarousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" style="color: #ECE8DD;"></span></a>
-				<a class="down right carousel-control" href="#middleCarousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right" style="color: #ECE8DD;"></span></a>
-
-
-			</div>
-		</div>
-	</div>
-
-	<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
-
-	<!-- Phan Category -->
-
-	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2" style="padding: 0px;">
-			<div class="topic">
-				<img src="finalprojectimages/businessbook.jpg" class="imagecategory" alt="">
-				<p class="bookcategory">Business</p>
-				<div class="overlay1"></div>
-				<div class="button"><a href="category.html"> SHOP NOW </a></div>
-			</div>
-			<div class="topic">
-				<img src="finalprojectimages/childbook.jpg" class="imagecategory" alt="">
-				<p class="bookcategory">Children</p>
-				<div class="overlay1"></div>
-				<div class="button"><a href="category.html"> SHOP NOW </a></div>
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2" style="padding: 0px;">
-			<div class="topic">
-				<img src="finalprojectimages/romancebook.jpg" class="imagecategory" alt="">
-				<p class="bookcategory">Romance</p>
-				<div class="overlay1"></div>
-				<div class="button"><a href="category.html"> SHOP NOW </a></div>
-			</div>	
-			<div class="topic">
-				<img src="finalprojectimages/horrorbook.jpg" class="imagecategory" alt="">
-				<p class="bookcategory">Horror</p>
-				<div class="overlay1"></div>
-				<div class="button"><a href="category.html"> SHOP NOW </a></div>
-			</div>
-		</div>
-	</div>
-
-	<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-top: 50px;">
-
-	<!-- Best Sellers -->
-	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2" style="text-align: center;">
-			<h1 style="font-weight: bold;">Best Sellers</h1>
-		</div>
-	</div>
-	<br/>
-	<br/>
-
-	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2">
-			<div class="col-sm-4 col-sm-offset-2" style="text-align: center;">
-				<div class="shine">
-					<a href="detail.html"><img src="images/travelbook.jpg" class="bookhighlight"></a>
-				</div>
-			</div>
-			<div class="col-sm-6 highlightsub">
-				<a href="detail.html"><h1 class="booktitle">Around The World In 21</h1></a>
-				<a href="detail.html"><h2 class="subbooktitle">Limited Edition</h2></a>
-				<h5 class="bookauthor">by James Wong</h5>
-				<h4 class="bookprice">$14.36</h4>
-				<button class="btn btn-danger my-cart-btn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
-			</div>
-		</div>
-	</div>
-
-	<br>
-	<br>
-	<br>
-	<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-top: 50px;">
-
-	<!-- Ket thuc body 1-->	
 	<!-- Footer -->
+<div class="container-fluid">
 	<div class="row footer">
 		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
-				<h4>INFORMATION</h4>
-				<a href="#">ABOUT US</a><br/>
-				<a href="#">CUSTOMER SERVICE</a><br>
-				<a href="#">PRIVACY POLICY</a><br>
-				<a href="#">SITE MAP</a><br>
-				<a href="#">ORDERS AND RETURNS</a>
+				<h4>THÔNG TIN</h4>
+				<a href="#">VỀ CHÚNG TÔI</a><br/>
+				<a href="#">DỊCH VỤ KHÁCH HÀNG</a><br>
+				<a href="#">CHÍNH SÁC BẢO MẬT</a><br>
+				<a href="#">BẢN ĐỒ</a><br>
+				<a href="#">ĐẶT HÀNG VÀ ĐỔI TRẢ</a>
 		</div>
 		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
-			<h4>BENEFITS</h4>
-			<a href="#">SHIPPING AND RETURNS</a><br>
-			<a href="#">PAYMENT ONLINE</a><br>
-			<a href="#">INTERNATIONAL</a><br>
-			<a href="#">DISCOUNTS</a><br>
-			<a href="#">MEMBERSHIP</a>
+			<h4>QUYỀN LỢI</h4>
+			<a href="#">GIAO HÀNG VÀ ĐỔI TRẢ</a><br>
+			<a href="#">THANH TOÁN ONLINE</a><br>
+			<a href="#">GIAO DỊCH QUỐC TẾ</a><br>
+			<a href="#">GIẢM GIÁ</a><br>
+			<a href="#">THÀNH VIÊN</a>
 		</div>
 		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
-			<h4>CONTACT</h4>
-			<h6>ADDRESS: 7 GRACE.D, BERLIN, GERMANY.</h6>
+			<h4>LIÊN HỆ</h4>
+			<h6>ĐỊA CHỈ: số 64 LÝ CHÍNH THẮNG, PHƯỜNG 8, QUẬN 3, TPHCM</h6>
 			<h6>HOTLINE: (+39) 1234 1234</h6>
-			<h6>EMAIL  : BOOK4LIFE@GE.COM</h6>
+			<h6>EMAIL  : BOOK4LIFE@GE.COM.VN</h6>
 		</div>
 		<div class="col-sm-3" style="color: white; text-align: right;">
-			<h4 style="text-align: left;">FEEDBACK</h4>
-			<input class="feedback" type="text" name="feedback" placeholder="What we could do better?">
-			<button class="btn btn-danger">Send</button>
+			<h4 style="text-align: left;">GÓP Ý</h4>
+			<input class="feedback" type="text" name="feedback" placeholder="Chúng tôi có thể làm tốt hơn những gì?">
+			<button class="btn btn-danger">Gửi</button>
 		</div>
-	</div>
+	
 
 	<hr style="border-color: white; border-width: 2px; width: 100%; margin: 0px;">
 
-	<div class="row footer" style="padding: 0px; color: white;">
+	<div style="padding: 0px; color: white;">
 		<div class="col-sm-6 col-sm-offset-3">
 			<h4>Follow us on: <span class="fa fa-facebook" style="margin-left: 10px; margin-right: 10px;"></span> <span class="fa fa-instagram" style="margin-left: 10px;"></span></h4>
 		</div>
 	</div>
+	</div>	
+		
 
-
-</div>
-	
-
-
-
+</div>	
 
 <!--add to cart -->
 		<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
@@ -491,7 +304,102 @@
 		</div>
 		</div>
 	
-</script>
+<!-- Login part -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<img class="img-circle" id="img_logo" src="images/logomac.png">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms" ng-init="loadLogin()">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form" method="post" ng-submit="summitLogin()">
+		                <div class="modal-body">
+				    		<div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Nhập e-mail và mật khẩu.</span>
+                            </div>
+				    		<input id="login_username" ng-model="loginUser.email" name="email" type="text" class="form-control" placeholder="E-mail" required>
+				    		<input id="login_password" ng-model="loginUser.password" type="password" name="password" class="form-control" placeholder="Mật khẩu" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Ghi nhớ đăng nhập
+                                </label>
+                            </div>
+        		    	</div>
+				        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Đăng nhập</button>
+                            </div>
+				    	    <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">Quên mật khẩu?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link">Đăng ký</button>
+                            </div>
+				        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+    	    		    <div class="modal-body">
+		    				<div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">Nhập e-mail của bạn.</span>
+                            </div>
+		    				<input id="lost_email" class="form-control" type="text" placeholder="E-mail" required>
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Gửi</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link">Đăng nhập</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Đăng ký</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+            		    <div class="modal-body">
+		    				<div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Đăng ký tài khoản.</span>
+                            </div>
+                            <input id="register_username" class="form-control" type="text" placeholder="Tên tài khoản" required>
+                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                            <input id="register_password" class="form-control" type="password" placeholder="Mật khẩu" required>
+                            <input id="register_password_lan2" class="form-control" type="password" placeholder="Nhập lại mật khẩu" required>
+                            <input id="link_anh" class="form-control" type="text" placeholder="Link URL ảnh tại đây">
+            			</div>
+		    		    <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Đăng ký</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Đăng nhập</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">Quên mật khẩu?</button>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Register Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+			</div>
+		</div>
+</div>
+<!-- Ket thuc Login -->
+
 
 </body>
+<!-- JS File -->
 </html>

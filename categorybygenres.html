@@ -1,6 +1,6 @@
 
-<!-- Phan Body Category moi-->
-<div class="container" style="padding-top: 50px;"  ng-init="getCategories()">
+<!-- Phan Body CategorbyGernes moi-->
+<div class="container" style="padding-top: 50px;"  ng-init="getCategory()">
 	<div class="row testfade">
 		<div class="col-md-3 toolbar" style="border-right: 2px solid #E7E7E7; border-bottom: 2px solid #E7E7E7;">	
 				<form action="" class="navbar-form" id="searchplace">
@@ -41,7 +41,7 @@
 				</form>
 			<div class="sachmoi">
 				<div style="background-color: #222222; color: white; padding: 20px; border-radius: 2px; margin-bottom: 30px;">
-					<h4></h4>
+					<h4>{{genreName()}}</h4>
 				</div>
 				<div ng-show="!unidentified">
 					<span class="un-iden">{{result}}</span>
@@ -51,9 +51,9 @@
 				<div class="bg">
 						<img class="otherbooks" ng-src={{book.images.main}} alt=""/>
 						<div class="overlay"></div>
-						<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+						<button class="btn btn-danger my-cart-btn testbtn" data-id="{{book._id}}" data-name="{{book.tittle}}" data-summary="summary 1" data-price="{{book.sellingPrice}}" data-quantity="1" data-image="{{book.images.main}}"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
 						<div class="tuasach">
-							<a href="#detail"><h5 class="otherbooktitle">{{book.title}}</h5>
+							<a href="#detail/{{book._id}}"><h5 class="otherbooktitle">{{book.title}}</h5>
 							<h6 class="otherbookauthor">{{book.author}}</h6>
 							<h5 class="otherbookprice">{{book.sellingPrice|number}}<sup>đ</sup></h5></a>
 						</div>		

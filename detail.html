@@ -1,385 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Detail</title>
-	<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-	<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	
-	<!-- File -->
-	 	<link rel="stylesheet" href="cssfinal.css">
-
-	<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	<!--Angular JS-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
-
-	<!--UI Boostrap-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
-	<!-- Others -->
-		<link href="https://netdna.bootstrapcdn.com/font-awesome/latest/css/font-awesome.css" rel="stylesheet">
-</head>
-<body>
-
-<!-- Phan header Detail -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-10 col-sm-offset-1">
-			
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle  navbar-toggler-right" data-toggle="collapse" data-target="#bookMenu">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-
-						<a class="navbar-brand" href="index.html"><img src="images/logomac1.png" style="width: 50px; height: 50px; margin-top: -10px;" alt=""><div style="width: 80px; height: 50px;"></div></a>
-						<a class="navbar-brand" href="#">
-								<!-- My Cart -->
-								<h2 style="margin-top: 0px;">
-									<div class="carttop">	
-										<span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="position: relative; background-color: inherit; z-index: 999;">
-											<span class="badge badge-notify my-cart-badge">0</span>
-										</span>			
-									</div>
-								</h2>	
-						</a>
-
-					</div>
-
-					<ul class="nav navbar-nav navbar-right carttop2">
-						<li>
-							<!-- My Cart -->
-								<h2 style="margin-top: 15px;">
-									<div class="carttop2">	
-										<span class="glyphicon glyphicon-shopping-cart my-cart-icon" style="position: relative; background-color: inherit; z-index: 999;">
-											<span class="badge badge-notify my-cart-badge">0</span>
-										</span>			
-									</div>
-								</h2>
-						</li>
+<!-- Phan Body Datail moi -->
+<div class="container" style="padding-top: 50px;" ng-init="getBook()">
+	<div class="row testfade">
+		<div class="col-md-3 toolbar" style="border-right: 2px solid #E7E7E7; border-bottom: 2px solid #E7E7E7; margin-right: 20px;">	
+				<form action="" class="navbar-form" id="searchplace">
+   					<div class="input-group">
+       					<input type="Search" placeholder="Tìm kiếm..." class="form-control" ng-model="text"/>
+       					<div class="input-group-btn">
+           					<button class="btn btn-default">
+           						<a href="#/search/{{text}}">
+           							<span class="glyphicon glyphicon-search"></span>
+           						</a>
+           					</button>
+       					</div>
+   					</div>
+				</form>
+			<br>
+			<br>
+			<div class="panel panel-default" ng-init="getCategories()">
+				<div class="panel-heading"><h4 style="font-weight: bold;">Sách</h4></div>
+				<div class="panel-body">
+					<ul class="nav nav-pills nav-pills-danger nav-stacked">
+						<li ng-repeat="categories in categories"><a href="#category/{{categories._id}}">{{categories.name}}</a></li>
 					</ul>
-
-					<div class="collapse navbar-collapse navbar-center" id="bookMenu">
-						<ul class="nav navbar-nav">
-							<li class="head"><a href="#"><h5>HOME</h5></a></li>
-							<li class="head">
-								<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-									<h5>
-                            			BOOKS <span class="caret"></span>
-                            		</h5>
-                            	</a>
-                       				<ul class="dropdown-menu" role="menu">
-                            			<li><a href="category.html">Business</a></li>
-                            			<li><a href="category.html">Children</a></li>
-                            			<li><a href="category.html">Romance</a></li>
-                            			<li><a href="category.html">Horror</a></li>
-                            			<li class="divider"></li>
-                            			<li><a href="category.html">Others</a>
-                        			</ul>
-
-
-
-							<li class="head"><a href="#"><h5>ADMIN</h5></a></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown">
-                        		<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        			<h5 style="margin-bottom: 0px; margin-top: 0px; text-align: center">
-                            		<span class="fa fa-user fa-2x"></span><span>User</span>
-                            		</h5>
-                            	</a>
-                       			<ul class="dropdown-menu" role="menu">
-                            		<li><a href="">My Account</a></li>
-                            		<li><a href="">My Wishlist  </a></li>
-                            		<li><a href="">My Cart </a></li>
-                            		<li><a href="">Checkout</a></li>
-                            		<li><a href="">Log In </a></li>
-                        		</ul>
-                    		</li>
-
-						</ul>
-					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
-</nav>
+		<div class="col-md-8">
+		<div class="row" style="margin-bottom: 20px;">
+		<div class="col-md-12" style="border: 2px solid #E7E7E7; padding: 0px 0px 25px 0px;" >
+			<div class="sachmoi">
+				<div style="background-color: #222222; color: white; padding: 20px; border-radius: 2px; margin-bottom: 30px;">
+					<h4>{{book.title}}</h4>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12" style="text-align: center;">
+				<div class="shine">
+					<a href="detail.html"><img ng-src={{book.images.main}} class="bookhighlight"></a>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12  detailsachresponsive">
+				<h3 style="font-weight: bolder;">{{book.title}}</h3>
+				<a href="#author/{{book.author}}"><h5 style="font-style: italic;">{{book.author}}</h5></a>
+				<span uib-rating ng-model="rate" max="5" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+				<p>{{book.publisher}}</p>
+				<p>Sku: {{book.sku}}</p>
+				<p>Số trang: {{book.pages}} trang</p>
+				<p>Giá thị trường: <h4><s>{{book.previousPrice|number}}</s><sup>đ</sup></sub></h4></p>
+				<h3 style="color: red">{{book.sellingPrice|number}}<sup>đ</sup></h3>
+				<br>
+				<br>
+				<br>
+				<button class="btn btn-danger my-cart-btn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+			</div>
+		</div>
+		</div>
+		<div class="row" style="margin-bottom: 20px;">
+			<div class="col-md-12" style="border: 2px solid #E7E7E7; padding: 25px 15px 25px 15px;">
+                    <h4 style="font-weight: bold;">Thông tin sách: </h4>
+                    <table class="table table-striped table-responsive">
+                        <tbody><tr>
+                            <th class="col-xs-2">SKU</th>
+                            <td class="col-xs-10 ng-binding">{{book.sku}}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-xs-2"> Nhà xuất bản</th>
+                            <td lass="col-xs-10" class="ng-binding">{{book.publisher}}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-xs-2"> Trọng lượng </th>
+                            <td lass="col-xs-10" class="ng-binding"> {{book.weight}} <span ng-show="book.weight" class="" style=""> g</span> </td>
+                        </tr>
+                        <tr>
+                            <th class="col-xs-2"> Kích thước</th>
+                            <td lass="col-xs-10" class="ng-binding"> {{book.size.width}}<span ng-show="book.size.width" class="" style=""> x </span> {{book.size.depth}} </td>
+                        </tr>
+                        <tr>
+                            <th class="col-xs-2"> Số trang</th>
+                            <td lass="col-xs-10" class="ng-binding"> {{book.pages}}</td>
+                        </tr>
+                        <tr>
+                            <th class="col-xs-2"> Ngày xuất bản</th>
+                            <td lass="col-xs-10" class="ng-binding"> {{book.releaseDate|date:"dd/MM/yyyy"}}</td>
+                        </tr>
+                    </tbody></table>
+            </div>        
+		</div>
+		<div class="row" style="margin-bottom: 20px;">
+			<div class="col-md-12" style="border: 2px solid #E7E7E7; padding: 25px 15px 25px 15px;">
+				<h4 style="font-weight: bold;">Giới thiệu: </h4>
+				<div class="full-description" ng-model="book.fullDescription" ta-bind="text"></div>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom: 20px;">
+			<div class="col-sm-12" style="border: 2px solid #E7E7E7; padding: 25px 15px 25px 15px;">
+				<h4 style="font-weight: bold;">Bình luận: </h4>
 
-<!-- Ket thuc header Detail -->
-
-<!-- Phan Body Detail -->
-<div class="container-fluid">
-	<div class="row testfade">
-		<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
-		<div class="col-sm-6 col-sm-offset-3">
-			<div class="col-sm-6" style="text-align: center;">
-				<image src="images/travelbook.jpg" class="selectedbook">
 				<div class="row">
-					<div class="zoomout" style="text-align: center; margin-top: 20px;">
-						<ul class="list-inline gallery">    
-							<li><img class="thumbnail zoom" src="images/travelbook.jpg"></li>    
-							<li><img class="thumbnail zoom" src="images/travelbook.jpg"></li>    
-							<li><img class="thumbnail zoom" src="images/travelbook.jpg"></li>    
-						</ul>
+					<div class="col-sm-12">
+						<div class="panel panel-white post panel-shadow" ng-repeat="book in book.comments">
+                			<div class="post-heading">
+                    			<div class="pull-left image">
+                        			<img ng-src="{{book._user.avatarUrl}}" class="img-circle avatar" alt="user profile image">
+                    			</div>
+                    			<div class="pull-left meta">
+                        			<div class="title h5">
+                            			<a href="#"><b>{{book._user.name}}</b></a> đã đăng.
+                        			</div>
+                        			<h6 class="text-muted time">{{book.createdDate|date:hour}}</h6>
+                    			</div>
+                			</div> 
+                			<div class="post-description"> 
+                    			<p>{{book.commentBody}}</p>
+                    			<div class="stats">
+                        			<a href="#" class="btn btn-default stat-item">
+                            			<i class="fa fa-thumbs-up icon"></i>2
+                        			</a>
+                        			<a href="#" class="btn btn-default stat-item">
+                            			<i class="fa fa-thumbs-down icon"></i>12
+                        			</a>
+                    			</div>
+                			</div>
+            			</div>		
 					</div>
+
+					<div class="col-sm-12" style="margin-top: 20px; margin-bottom: 10px;">
+
+
+							<div class="post-heading">
+                    			<div class="pull-left image" style="margin-bottom: 15px;">
+                        			<img ng-src="{{user.avatarUrl}}" class="img-circle ava-comment" alt="user profile image">
+                    			</div>
+                    			<div class="pull-left meta">
+                        			<div class="title h5">
+                            			<a href="#"><b>{{user.name}}</b></a>
+                        			</div>
+                        			<h6 class="text-muted time">{{book.createdDate|date:hour}}</h6>
+                    			</div>
+                			</div> 
+                			<div class="post-description"> 
+                    			<form name="" ng-submit="addComment(book)" class="col-md-12 col-xs-12" novalidate>
+                						<input type="text" style="width: 100%; height: 100px;" name="" id="" ng-model="comment.commentBody" required>
+                						<div class="thongtin">
+                							<br>
+                							<label>Gửi đánh giá:</label>
+                							<span uib-rating ng-model="rate" max="5" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+                						</div>
+                						<br>
+                						<button class="md-raised md-warn" type="submit"> Bình luận </button>
+                				</form>
+                			</div>	
+													
+                			
+                			
+            					
+					</div>
+
 				</div>
 			</div>
-			<div class="col-sm-6">
-											<h1 class="booktitle1">Around The World In 21</h1>
-											<h3 class="bookauthor">by James Wong</h3>
-											<div class="star"></div>
-											<hr style="border-color: #E7E3D8; border-width: 3px;">
-											<h3 class="subbooktitle">Description</h3>
-											<p style="font-style: italic;">"It just reminds me how much of the world there is still to see" - Tony Wheeler, Lonely Planet founder, 145 countries visited and counting ...<br/>
-
-											'At a time when the world feels as if it's becoming a larger, more divided and increasingly impossible place to understand, let alone discover, The Travel Book is a reminder that the world is truly an amazing place.' The Age (Melbourne, Australia) <a class="xemthem" data-toggle="collapse" data-target="#demo">..read more</a></p>
-											<div id="demo" class="collapse">
-												TripAdvisor Travellers' Choice Awards 2012 and 2013 winner in Favorite Travel Guide category<br/>
-												'Lonely Planet guides are, quite simply, like no other.' - New York Times<br/>
-												'Lonely Planet. It's on everyone's bookshelves; it's in every traveller's hands. It's on mobile phones. It's on the Internet. It's everywhere, and it's telling entire generations of people how to travel the world.' - Fairfax Media (Australia)<br/>
-												*#1 in the world market share - source: Nielsen Bookscan. Australia, UK and USA. March 2012-January 2013
-											</div>
-											<hr style="border-color: #E7E3D8; border-width: 3px;">
-
-											<div class="row">
-												<div class="col-sm-6">
-													<h3 class="bookprice1">Price: $14.36</h3>				
-												</div>
-												<div class="col-sm-5">
-													<button class="btn btn-danger my-cart-btn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
-												</div>
-											</div>
-			</div>
 		</div>
-	</div>
-
-	<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
-	<div class="row testfade">
-		<div class="col-sm-6 col-sm-offset-3">
-			<h1>Comments</h1>
-			<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
-			<div class="comment" style="display: inline-flex; max-width: 100%; margin-bottom: 30px;">
-				
-					<img src="finalprojectimages/avatar.jpg" class="avauser">
-				
-				<div class="dialogbox">
-    				<div class="body">
-      					<span class="tip tip-left"></span>
-      					<div class="message">
-        					<span>I just made a comment about this comment box which is purely made from CSS.I just made a comment about this comment box which is purely made from CSS.I just made a comment about this comment box which is purely made from CSS. </span>
-      					</div>
-    				</div>
-  				</div>
-			</div>
-
-			<div class="comment" style="display: inline-flex; max-width: 100%; margin-bottom: 30px;">
-				
-					<img src="finalprojectimages/avatar2.jpg" class="avauser">
-				
-				<div class="dialogbox">
-    				<div class="body">
-      					<span class="tip tip-left"></span>
-      					<div class="message">
-        					<span>I just made a comment about this comment box which is purely made from CSS.I just made a comment about this comment box which is purely made from CSS.I just made a comment about this comment box which is purely made from CSS. </span>
-      					</div>
-    				</div>
-  				</div>
-			</div>
-			<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
-		</div>
-	</div>
-	<div class="row testfade">
-		<div class="col-sm-6 col-sm-offset-3">
-			<div class="commentuser">
-						<img src="finalprojectimages/avatar2.jpg" class="avauser">
-						<textarea cols="500" rows="1" required style="margin-left: 20px; margin-right: 5px; width: 100%;" placeholder="Add your comment ..."></textarea>
-						<button style="display: block; width: 100px; margin-right: 15px;">Post</button>
-			</div>
+			
 		</div>
 	</div>
 </div>
-
-	
-	<hr style="border-color: #E7E3D8; border-width: 3px; width: 90%; margin-bottom: 30px;">
-
-	<!-- Footer -->
-	<div class="row footer">
-		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
-				<h4>INFORMATION</h4>
-				<a href="#">ABOUT US</a><br/>
-				<a href="#">CUSTOMER SERVICE</a><br>
-				<a href="#">PRIVACY POLICY</a><br>
-				<a href="#">SITE MAP</a><br>
-				<a href="#">ORDERS AND RETURNS</a>
-		</div>
-		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
-			<h4>BENEFITS</h4>
-			<a href="#">SHIPPING AND RETURNS</a><br>
-			<a href="#">PAYMENT ONLINE</a><br>
-			<a href="#">INTERNATIONAL</a><br>
-			<a href="#">DISCOUNTS</a><br>
-			<a href="#">MEMBERSHIP</a>
-		</div>
-		<div class="col-sm-3" style="color: white; text-align: left; margin-bottom: 15px;">
-			<h4>CONTACT</h4>
-			<h6>ADDRESS: 7 GRACE.D, BERLIN, GERMANY.</h6>
-			<h6>HOTLINE: (+39) 1234 1234</h6>
-			<h6>EMAIL  : BOOK4LIFE@GE.COM</h6>
-		</div>
-		<div class="col-sm-3" style="color: white; text-align: right;">
-			<h4 style="text-align: left;">FEEDBACK</h4>
-			<input class="feedback" type="text" name="feedback" placeholder="What we could do better?">
-			<button class="btn btn-danger">Send</button>
-		</div>
-	</div>
-
-	<hr style="border-color: white; border-width: 2px; width: 100%; margin: 0px;">
-
-	<div class="row footer" style="padding: 0px; color: white;">
-		<div class="col-sm-6 col-sm-offset-3">
-			<h4>Follow us on: <span class="fa fa-facebook" style="margin-left: 10px; margin-right: 10px;"></span> <span class="fa fa-instagram" style="margin-left: 10px;"></span></h4>
-		</div>
-	</div>	
-
-</div>
-
-
-<!-- Ket thuc Body Detail -->
-
-<!--add to cart -->
-		<script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
-		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="jsmycart/jquery.mycart.js"></script>
-		<script type="text/javascript">
-  			$(function () {
-
-   			var goToCartIcon = function($addTocartBtn){
-      		var $cartIcon = $(".my-cart-icon");
-     		var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({"position": "fixed", "z-index": "100"});
-      		$addTocartBtn.prepend($image);
-      		var position = $cartIcon.position();
-      		$image.animate({
-      		}, 500 , "linear", function() {
-        	$image.remove();
-      		});
-    		}
-
-    		$('.my-cart-btn').myCart({
-      		classCartIcon: 'my-cart-icon',
-      		classCartBadge: 'my-cart-badge',
-      		affixCartIcon: true,
-      		checkoutCart: function(products) {
-        	$.each(products, function(){
-          	console.log(this);
-        	});
-     		},
-      		clickOnAddToCart: function($addTocart){
-        	goToCartIcon($addTocart);
-      		},
-      		getDiscountPrice: function(products) {
-        	var total = 0;
-        	$.each(products, function(){
-          	total += this.quantity * this.price;
-       		});
-        	return total * 0.5;
-      		}
-    		});
-
-  			});
-  		</script>
-		
-		<script type="text/javascript">
-
-  			var _gaq = _gaq || [];
-  			_gaq.push(['_setAccount', 'UA-36251023-1']);
-  			_gaq.push(['_setDomainName', 'jqueryscript.net']);
- 			_gaq.push(['_trackPageview']);
-
-  			(function() {
-    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-   			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  			})();
-
-		</script>
-
-		<div class="modal fade" id="my-cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;"><div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">×</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</h4>
-				</div>
-
-				<div class="modal-body">
-					<table class="table table-hover table-responsive" id="my-cart-table">
-						<tbody>
-							<tr title="summary 1" data-id="1" data-price="10">
-								<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="images/travelbook.jpg"></td>
-								<td>product 1</td>
-								<td title="Unit Price">$10</td>
-								<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="my-product-quantity" value="4"></td>
-								<td title="Total" class="my-product-total">$40</td>
-								<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger my-product-remove">X</a></td>
-							</tr>
-
-							<tr title="summary 2" data-id="2" data-price="20">
-								<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="images/travelbook.jpg"></td>
-								<td>product 2</td>
-								<td title="Unit Price">$20</td>
-								<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="my-product-quantity" value="2"></td>
-								<td title="Total" class="my-product-total">$40</td>
-								<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger my-product-remove">X</a></td>
-							</tr>
-
-							<tr title="summary 3" data-id="3" data-price="30">
-								<td class="text-center" style="width: 30px;"><img width="30px" height="30px" src="images/travelbook.jpg"></td>
-								<td>product 3</td><td title="Unit Price">$30</td>
-								<td title="Quantity"><input type="number" min="1" style="width: 70px;" class="my-product-quantity" value="5"></td>
-								<td title="Total" class="my-product-total">$150</td>
-								<td title="Remove from Cart" class="text-center" style="width: 30px;"><a href="javascript:void(0);" class="btn btn-xs btn-danger my-product-remove">X</a></td>
-							</tr>
-
-							<tr>
-								<td></td>
-								<td><strong>Total</strong></td>
-								<td></td>
-								<td></td>
-								<td><strong id="my-cart-grand-total">$230</strong></td>
-								<td></td>
-							</tr>
-
-							<tr style="color: red">
-								<td></td>
-								<td><strong>Total (including discount)</strong></td>
-								<td></td>
-								<td></td>
-								<td><strong id="my-cart-discount-price">$115</strong></td>
-								<td></td>
-							</tr>
-
-						</tbody>
-					</table>
-				</div>
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" id="checkout-my-cart">Checkout</button>
-				</div>
-			</div>
-		</div>
-		</div>
-	
-</script>
-
-</body>
-</html>

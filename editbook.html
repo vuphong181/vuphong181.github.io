@@ -1,0 +1,116 @@
+<!-- Phan than admin -->
+<div class="container" style="padding-top: 50px;" ng-init="getBook()">
+	<div class="row testfade">
+		<div class="col-md-3" style="border-right: 2px solid #E7E7E7; text-align: center; margin-bottom: 20px;">	
+			<img ng-src="{{book.images.main}}" class="otherbooks">
+		</div>
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Tùy chỉnh</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<form ng-submit="updateBook()">
+										<div class="form-group">
+											<label>Tựa sách</label>
+											<input type="text" class="form-control" placeholder="Tựa sách" ng-model="book.title">
+										</div>
+										<div class="form-group">
+											<label>Thể loại</label>
+											<select ng-required="true" class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" required="required">
+												<option value="?" selected="selected"></option>
+												<option label="Sách Ngoại Văn" value="object:5">Sách Ngoại Văn</option>
+												<option label="Sách Kinh Tế" value="object:6">Sách Kinh Tế</option>
+												<option label="Sách Văn Học Trong Nước" value="object:7">Sách Văn Học Trong Nước</option>
+												<option label="Sách Văn Học Nước Ngoài" value="object:8">Sách Văn Học Nước Ngoài</option>
+												<option label="Sách Thường Thức Đời Sống" value="object:9">Sách Thường Thức Đời Sống</option>
+												<option label="Sách Thiếu Nhi" value="object:10">Sách Thiếu Nhi</option>
+												<option label="Sách Phát Triển Bản Thân" value="object:11">Sách Phát Triển Bản Thân</option>
+												<option label="Sách Tin Học - Ngoại Ngữ" value="object:12">Sách Tin Học - Ngoại Ngữ</option>
+												<option label="Sách Chuyên Ngành" value="object:13">Sách Chuyên Ngành</option>
+												<option label="Sách Giáo Khoa Giáo Trình" value="object:14">Sách Giáo Khoa Giáo Trình</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label>Tác giả</label>
+											<input type="text" class="form-control" placeholder="Tác giả" ng-model="book.author">
+										</div>
+										<div class="form-group">
+											<label>Nhà xuất bản</label>
+											<input type="text" class="form-control" placeholder="NXB" ng-model="book.publisher">
+										</div>
+										<div class="form-group">
+											<label>Số trang</label>
+											<input type="text" class="form-control" placeholder="Số trang" ng-model="book.pages">
+										</div>
+										<div class="form-group">
+											<label>Nặng</label>
+											<input type="text" class="form-control" placeholder="Số trang" ng-model="book.weight">
+										</div>
+										<div class="form-group">
+											<label>Chiều ngang</label>
+											<input type="text" class="form-control" placeholder="Chiều ngang..." ng-model="book.size.width">
+										</div>
+										<div class="form-group">
+											<label>Chiều sâu</label>
+											<input type="text" class="form-control" placeholder="..." ng-model="book.size.depth">
+										</div>
+										<div class="form-group">
+											<label>Sku</label>
+											<input type="text" class="form-control" placeholder="" ng-model="book.sku">
+										</div>
+										<div class="form-group">
+											<label>Giới thiệu</label>
+											<div text-angular="text-angular" class="textAngular" name="shortDescription " ng-model="book.shortDescription " ta-disabled='disabled' class="inputDescription "></div>
+										</div>
+										<div class="form-group">
+											<label>Giới thiệu chi tiết</label>
+											<div text-angular="text-angular" class="textAngular" name="fullDescription " ng-model="book.fullDescription " ta-disabled='disabled' class="inputDescription "></div>
+										</div>
+										<div class="form-group">
+											<label>Ảnh sách</label>
+											<input type="text" class="form-control" ng-model="book.images.main">
+										</div>
+										<div class="form-group">
+											<label>Giá bán ban đầu</label>
+											<input type="text" class="form-control" placeholder="Giá bán ban đầu" ng-model="book.previousPrice">
+										</div>
+										<div class="form-group">
+											<label>Giá bán lúc sau</label>
+											<input type="text" class="form-control" placeholder="Giá bán lúc sau" ng-model="book.sellingPrice">
+										</div>
+										<div class="form-group">
+											<label>Ngày đăng</label>
+											<p class="input-group date">
+                                    			<input type="text" class="form-control " uib-datepicker-popup="MM/dd/yyyy" ng-model="book.createDate" is-open="popup2.opened" datepicker-options="" close-text="Close" popup-placement="bottom-right" ng-model-options="{allowInvalid: true}" />
+                                    				<span class="input-group-btn">
+                                        				<button type="button" class="btn btn-default btn-md" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                     				</span>
+                                			</p>
+										</div>
+										<div class="form-group">
+											<label>Ngày xuất bản</label>
+											<p class="input-group date">
+                                    			<input type="text" class="form-control " uib-datepicker-popup="MM/dd/yyyy" ng-model="book.releaseDate" is-open="popup1.opened" datepicker-options="" close-text="Close" popup-placement="bottom-right" ng-model-options="{allowInvalid: true}" />
+                                    				<span class="input-group-btn">
+                                        				<button type="button" class="btn btn-default btn-md" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    				</span>
+                                			</p>
+
+										</div>
+										<button type="submit" class="btn btn-default">Lưu</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

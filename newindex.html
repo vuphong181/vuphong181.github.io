@@ -1,0 +1,31 @@
+
+<!-- Test new body -->
+<div class="container" style="padding-top: 50px;">
+	<div class="row testfade">
+		<div class="col-md-3 toolbar" style="border-right: 2px solid #E7E7E7; border-bottom: 2px solid #E7E7E7;">	
+			
+		</div>
+		<div class="col-md-9">
+			<form>
+			  	<input id="searchplace1" type="text" name="search" placeholder="Tìm kiếm..">
+			</form>
+			<div class="sachmoi">
+				<div style="background-color: #222222; color: white; padding: 20px; border-radius: 2px; margin-bottom: 30px;">
+					<h4>Sách phổ biến</h4>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="book in myBook" style="text-align: center;">
+				<div class="bg">
+						<img class="otherbooks" ng-src={{book.images.main}} alt=""/>
+						<div class="overlay"></div>
+						<button class="btn btn-danger my-cart-btn testbtn" data-id="1" data-name="product 1" data-summary="summary 1" data-price="10" data-quantity="1" data-image="images/travelbook.jpg"><span class="glyphicon glyphicon-shopping-cart"></span>ADD TO CART</button>
+						<div class="tuasach">
+							<a href="detail.html"><h5 class="otherbooktitle">{{book.title}}</h5>
+							<h6 class="otherbookauthor">{{book.author}}</h6>
+							<h5 class="otherbookprice">{{book.sellingPrice}}</h5></a>
+						</div>		
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

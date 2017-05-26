@@ -1,0 +1,130 @@
+<!-- Phan than admin -->
+<div class="container" style="padding-top: 50px;" ng-init="getBooks()">
+	<div class="row">
+		<div class="col-md-3 toolbar" style="border-right: 2px solid #E7E7E7; border-bottom: 2px solid #E7E7E7;">	
+				<form action="" class="navbar-form" id="searchplace">
+   					<div class="input-group">
+       					<input type="Search" placeholder="Tìm kiếm..." class="form-control" ng-model="text"/>
+       					<div class="input-group-btn">
+           					<button class="btn btn-default">
+           						<a href="#/search/{{text}}">
+           							<span class="glyphicon glyphicon-search"></span>
+           						</a>
+           					</button>
+       					</div>
+   					</div>
+				</form>
+			<br>
+			<br>
+			<div class="panel panel-default" ng-init="getCategories()">
+				<div class="panel-heading"><h4 style="font-weight: bold;">Sách</h4></div>
+				<div class="panel-body">
+					<ul class="nav nav-pills nav-pills-danger nav-stacked">
+						<li ng-repeat="categories in categories"><a href="#category/{{categories._id}}">{{categories.name}}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#admin">Thêm sách</a></li>
+						<li><a href="#tuychinh">Tất cả sách (tùy chỉnh)</a></li>
+					</ul>
+
+					<div class="panel panel-default">
+
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<form ng-submit="addBook()">
+										<div class="form-group">
+											<label>Tựa sách</label>
+											<input type="text" class="form-control" placeholder="Tựa sách" ng-model="book.title">
+										</div>
+										<div class="form-group" ng-init="getCategories()">
+											<label>Thể loại</label>
+											<select ng-model="book.genre" name="genre" ng-required="true" class="form-control" ng-options="categories as categories.name for categories in categories"></select>
+										</div>
+										<div class="form-group">
+											<label>Tác giả</label>
+											<input type="text" class="form-control" placeholder="Tác giả" ng-model="book.author">
+										</div>
+										<div class="form-group">
+											<label>Nhà xuất bản</label>
+											<input type="text" class="form-control" placeholder="NXB" ng-model="book.publisher">
+										</div>
+										<div class="form-group">
+											<label>Số trang</label>
+											<input type="text" class="form-control" placeholder="Số trang" ng-model="book.pages">
+										</div>
+										<div class="form-group">
+											<label>Trọng lượng (gram)</label>
+											<input type="text" class="form-control" placeholder="(gram)" ng-model="book.weight">
+										</div>
+										<div class="form-group">
+											<label>Chiều ngang</label>
+											<input type="text" class="form-control" placeholder="Chiều ngang..." ng-model="book.size.width">
+										</div>
+										<div class="form-group">
+											<label>Chiều dài</label>
+											<input type="text" class="form-control" placeholder="Chiều dài..." ng-model="book.size.depth">
+										</div>
+										<div class="form-group">
+											<label>Sku</label>
+											<input type="text" class="form-control" placeholder="SKU" ng-model="book.sku">
+										</div>
+										<div class="form-group">
+											<label>Giới thiệu</label>
+											<div text-angular="text-angular" class="textAngular" name="shortDescription " ng-model="book.shortDescription " ta-disabled='disabled' class="inputDescription "></div>
+										</div>
+										<div class="form-group">
+											<label>Giới thiệu chi tiết</label>
+											<div text-angular="text-angular" class="textAngular" name="fullDescription " ng-model="book.fullDescription " ta-disabled='disabled' class="inputDescription"></div>
+										</div>
+										<div class="form-group">
+											<label>Ảnh sách</label>
+											<input type="text" class="form-control" ng-model="book.images.main" placeholder="Link ảnh">
+										</div>
+										<div class="form-group">
+											<label>Giá bán ban đầu</label>
+											<input type="text" class="form-control" placeholder="Giá bán ban đầu" ng-model="book.previousPrice">
+										</div>
+										<div class="form-group">
+											<label>Giá bán lúc sau</label>
+											<input type="text" class="form-control" placeholder="Giá bán lúc sau" ng-model="book.sellingPrice">
+										</div>
+										<div class="form-group">
+											<label>Ngày đăng</label>
+											<p class="input-group date">
+                                    			<input type="text" class="form-control " uib-datepicker-popup="MM/dd/yyyy" ng-model="book.createDate" is-open="popup2.opened" datepicker-options="" close-text="Close" popup-placement="bottom-right" ng-model-options="{allowInvalid: true}" placeholder="dd/mm/yyyy" />
+                                    				<span class="input-group-btn">
+                                        				<button type="button" class="btn btn-default btn-md" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                     				</span>
+                                			</p>
+										</div>
+										<div class="form-group">
+											<label>Xuất bản</label>
+											<p class="input-group date">
+                                    			<input type="text" class="form-control " uib-datepicker-popup="MM/dd/yyyy" ng-model="book.releaseDate" is-open="popup1.opened" datepicker-options="" close-text="Close" popup-placement="bottom-right" ng-model-options="{allowInvalid: true}" placeholder="dd/mm/yyyy"/>
+                                    				<span class="input-group-btn">
+                                        				<button type="button" class="btn btn-default btn-md" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    				</span>
+                                			</p>
+
+										</div>
+										<button type="submit" class="btn btn-default">Đăng</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>				
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>

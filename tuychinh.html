@@ -1,0 +1,70 @@
+<!-- Phan than admin -->
+<div class="container" style="padding-top: 50px;" ng-init="getBooks()">
+	<div class="row">
+		<div class="col-md-3 toolbar" style="border-right: 2px solid #E7E7E7; border-bottom: 2px solid #E7E7E7;">	
+				<form action="" class="navbar-form" id="searchplace">
+   					<div class="input-group">
+       					<input type="Search" placeholder="Tìm kiếm..." class="form-control" ng-model="text"/>
+       					<div class="input-group-btn">
+           					<button class="btn btn-default">
+           						<a href="#/search/{{text}}">
+           							<span class="glyphicon glyphicon-search"></span>
+           						</a>
+           					</button>
+       					</div>
+   					</div>
+				</form>
+			<br>
+			<br>
+			<div class="panel panel-default" ng-init="getCategories()">
+				<div class="panel-heading"><h4 style="font-weight: bold;">Sách</h4></div>
+				<div class="panel-body">
+					<ul class="nav nav-pills nav-pills-danger nav-stacked">
+						<li ng-repeat="categories in categories"><a href="#category/{{categories._id}}">{{categories.name}}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-tabs">
+						<li><a href="#admin">Thêm sách</a></li>
+						<li class="active"><a href="#tuychinh">Tất cả sách (tùy chỉnh)</a></li>
+					</ul>
+
+<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<br>
+						<div class="panel-body">
+							<div class="row" ng-init="getBooks()">
+								<div class="col-md-12">
+									<div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="book in books" style="text-align: center;">
+										<div class="bg">
+											<img class="otherbooks" ng-src={{book.images.main}} alt=""/>
+											<div class="overlay"></div>
+											<button type="button" class="btn btn-info tuychinh"><a href="#/admin/editbook/{{book._id}}"><span class="glyphicon glyphicon-edit"></span>Tùy chỉnh</a></button>
+											<button type="button" class="btn btn-danger xoabo" ng-click="removeBook(book._id)"><span class="glyphicon glyphicon-minus"></span>Xóa</button>
+											<div class="tuasach">
+												<a href="#detail/{{book._id}}"><h5 class="otherbooktitle">{{book.title}}</h5>
+												<h6 class="otherbookauthor">{{book.author}}</h6>
+												<h5 class="otherbookprice">{{book.sellingPrice|number}}<sup>đ</sup></h5></a>
+											</div>		
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+</div>			
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>					
+			
